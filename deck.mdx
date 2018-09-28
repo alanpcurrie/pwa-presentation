@@ -6,52 +6,66 @@ import nightOwl from "prism-react-renderer/themes/nightOwl"
 export { dark as theme } from 'mdx-deck/themes'
 
 <Head>
-  <title>Presentation Title</title>
-  <meta itemprop="name" content="Presentation Title" />
-  <meta itemprop="description" content="Presentation description" />
-  <meta itemprop="image" content="https://pbs.twimg.com/profile_images/979408111868952576/yq2IUoGt_bigger.jpg" />
+  <title>Progressive web app presentation</title>
+  <meta itemProp="name" content="Progressive web app presentation" />
+  <meta itemProp="description" content="Progressive web app presentation" />
+  <meta itemProp="image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@whoisryosuke" />
-  <meta name="twitter:title" content="Presentation Title" />
-  <meta name="twitter:description" content="Presentation description" />
-  <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/979408111868952576/yq2IUoGt_bigger.jpg" />
-  <meta property="og:title" content="Presentation Title" />
+  <meta name="twitter:site" content="@_AlanCurrie" />
+  <meta name="twitter:title" content="Progressive web app presentation" />
+  <meta name="twitter:description" content="Progressive web app presentation" />
+  <meta name="twitter:image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
+  <meta property="og:title" content="Progressive web app presentation" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://www.example.com/" />
-  <meta property="og:image" content="https://pbs.twimg.com/profile_images/979408111868952576/yq2IUoGt_bigger.jpg" />
-  <meta property="og:description" content="Presentation description" />
-  <meta property="og:site_name" content="Presentation Title" />
-  <meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />
-  <meta property="article:modified_time" content="2013-09-16T19:08:47+01:00" />
+  <meta property="og:url" content="https://reverent-rosalind-f11320.netlify.com/" />
+  <meta property="og:image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
+  <meta property="og:description" content="Progressive web app presentation" />
+  <meta property="og:site_name" content="Progressive web app presentation" />
   <meta property="article:section" content="Article Section (React? Design?)" />
 </Head>
 
-# PWA Presentation 🔥
+# 🤖 PWA Presentation 🤖
+
+(progressive web applications)
 
 ---
 
+# What is a PWA 🦕
+
+### Progressive Web Apps are user experiences that have the reach of the web, and are:
+
+<Appear>
+  <p></p>
+  <p>Reliable - Load instantly and never show the downasaur, even in uncertain network conditions.</p>
+  <p>Fast - Respond quickly to user interactions with silky smooth animations and no janky scrolling.</p>
+  <p>Engaging - Feel like a natural app on the device, with an immersive user experience.</p>
+  <p>This new level of quality allows Progressive Web Apps to earn a place on the user's home screen.</p>
+</Appear>
+
 export default Split
-
-# What is a PWA 🦄💣
-
-
-<Image src={require("!file-loader!./img/mr-motivator.jpg")} size="contain"/>
 
 ---
 
-export default Split
-
-## App manifest
-
-stuff about app manifest
+<CodeSurfer
+  title="⚙️ app manifest ⚙️"
+  notes="some useful notes ✏️"
+  code={require("!raw-loader!./examples/manifest.js")}
+  lang="javascript"
+  showNumbers={true}
+  theme={nightOwl}
+  dark={false}
+  steps={[
+    { lines: [27, 28, 29], notes: "Note for the first step ✏️" },
+    { range: [1, 2] },
+    { tokens: { 1: [1, 2, 3] }, notes: "Note for the third step ✏️" }
+  ]}
+/>
 
 ```notes
 - Create speaker notes in fenced code blocks
 ```
 
 ---
-
-export default Split
 
 ## Service workers
 
@@ -60,24 +74,46 @@ stuff about service workers
 ```notes
 - Create speaker notes in fenced code blocks
 ```
+export default Split
 
 ---
 
-## Text appears when you activate next slide
+## Service workers life cycle
 
-<ul>
-  <Appear>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
-  </Appear>
-</ul>
-
-Go backwards to hide text again
-
----
+<Appear>
+  <p></p>
+  <p>Parsed</p>
+  <p>Installed</p>
+  <p>Activating</p>
+  <p>Activated</p>
+  <p>Redundant</p>
+</Appear>
 
 export default Split
+
+---
+
+## Service workers scope
+
+<Appear>
+  <p></p>
+  <p>Parsed</p>
+  <p>Installed</p>
+  <p>Activating</p>
+  <p>Activated</p>
+  <p>Redundant</p>
+</Appear>
+
+export default Split
+
+---
+
+## ✨ hawt arrow functions ✨
+
+Not  all  browsers  support  arrow  functions ``` (() => {}), ``` but every
+browser  that  supports  Service  Worker  does. CONST and LET are cool too. All the things, except Babel.
+
+---
 
 <CodeSurfer
   code={`const code = {
@@ -98,6 +134,8 @@ export default Split
 
 ## Split layout
 
+export default Split
+
 ---
 
 <CodeSurfer
@@ -117,8 +155,6 @@ export default Split
 
 ---
 
-export default Split
-
 ## Performance
 
 stuff about Performance
@@ -127,10 +163,48 @@ stuff about Performance
 - Create speaker notes in fenced code blocks
 ```
 
+export default Split
+
 ---
 
 # useful links
 
+<https://caniuse.com/#feat=serviceworkers>
+
 <https://developers.google.com/web/progressive-web-apps>
+
+<https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API>
+
+<https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API>
+
+<https://egghead.io/courses/offline-first-progressive-web-apps-pwa-in-vue-js>
+
+<https://www.smashingmagazine.com/2018/09/smashing-book-6-release>
+
+---
+
+# slides built with mdx-deck ⚛️
+# & codesurfer 🏄
+## hosted on netlify 👻
+
+<https://github.com/jxnblk/mdx-deck>
+
+<https://github.com/pomber/code-surfer>
+
+<https://github.com/alanpcurrie/pwa-presentation>
+
+<https://www.netlify.com>
+
+---
+
+#  Thanks and questions 😘❓
+
+---
+
+# image slide
+
+<Image src={require("!file-loader!./img/mr-motivator.jpg")} size="contain"/>
+
+export default Split
 
 ---
