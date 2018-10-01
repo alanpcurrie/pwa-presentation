@@ -2,7 +2,6 @@ import { Appear, Head, Image  } from 'mdx-deck'
 import { FullScreenCode, Invert, Split } from 'mdx-deck/layouts'
 import { CodeSurfer } from "mdx-deck-code-surfer"
 import nightOwl from "prism-react-renderer/themes/nightOwl"
-
 export { dark as theme } from 'mdx-deck/themes'
 
 <Head>
@@ -46,6 +45,12 @@ export default Split
 
 ---
 
+## App manifest
+
+stuff about the app manifest
+
+---
+
 <CodeSurfer
   title="⚙️ app manifest ⚙️"
   notes="some useful notes ✏️"
@@ -64,6 +69,29 @@ export default Split
 ```notes
 - Create speaker notes in fenced code blocks
 ```
+
+---
+
+## Meta data
+
+stuff about meta data
+
+---
+
+<CodeSurfer
+  title="⚙️ PWA meta data example ⚙️"
+  notes="some useful notes ✏️"
+  code={require("!raw-loader!./examples/meta.html")}
+  lang="html"
+  showNumbers={true}
+  theme={nightOwl}
+  dark={false}
+  steps={[
+    { lines: [17], notes: "Note for the first step ✏️" },
+    { range: [1, 2] },
+    { tokens: { 1: [1, 2, 3] }, notes: "Note for the third step ✏️" }
+  ]}
+/>
 
 ---
 
@@ -95,23 +123,34 @@ export default Split
 
 ## Service workers scope
 
-<Appear>
-  <p></p>
-  <p>Parsed</p>
-  <p>Installed</p>
-  <p>Activating</p>
-  <p>Activated</p>
-  <p>Redundant</p>
-</Appear>
+service worker scope example
 
 export default Split
 
 ---
 
-## ✨ hawt arrow functions ✨
+## Bonus ! ✨ hawt arrow functions ✨
 
 Not  all  browsers  support  arrow  functions ``` (() => {}), ``` but every
 browser  that  supports  Service  Worker  does. CONST and LET are cool too. All the things, except Babel.
+
+---
+
+## Check online status ⛵️
+
+stuff about NavigatorOnline api
+
+---
+
+## offline images ❌📷
+
+using svg for offline images
+
+---
+
+## push notifications 🐏
+
+native application like push notifications
 
 ---
 
@@ -138,24 +177,7 @@ export default Split
 
 ---
 
-<CodeSurfer
-  title="⚙️ PWA meta data example ⚙️"
-  notes="some useful notes ✏️"
-  code={require("!raw-loader!./examples/meta.html")}
-  lang="html"
-  showNumbers={true}
-  theme={nightOwl}
-  dark={false}
-  steps={[
-    { lines: [17], notes: "Note for the first step ✏️" },
-    { range: [1, 2] },
-    { tokens: { 1: [1, 2, 3] }, notes: "Note for the third step ✏️" }
-  ]}
-/>
-
----
-
-## Performance
+## Performance 🏃💨
 
 stuff about Performance
 
@@ -167,7 +189,19 @@ export default Split
 
 ---
 
-# useful links
+## Bonus! -  Lazy load routes 🌠
+
+dynamic import webpack example
+
+---
+
+## PWA busines case - stats and stuff 📈
+
+examples of case studies
+
+---
+
+## useful links
 
 <https://caniuse.com/#feat=serviceworkers>
 
@@ -180,6 +214,16 @@ export default Split
 <https://egghead.io/courses/offline-first-progressive-web-apps-pwa-in-vue-js>
 
 <https://www.smashingmagazine.com/2018/09/smashing-book-6-release>
+
+---
+
+## ...more useful links
+
+<https://www.pwastats.com>
+
+<https://pwa.rocks>
+
+<https://hnpwa.com>
 
 ---
 
