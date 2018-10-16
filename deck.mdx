@@ -134,7 +134,7 @@ The elements will vary by browser.
 
 ---
 
-## Meta datas for non android browsers
+## Meta data for non android browsers
 
 IOS and Microsoft Edge and still need some metadata to make the app installable.
 First, for iOS, it needs three `<meta>` tags.
@@ -241,7 +241,11 @@ export default Split
 
 ## Service workers scope 🎯
 
-service worker scope example
+  * The service worker will only catch requests from clients under the service worker's scope.
+  * The max scope for a service worker is the location of the worker.
+  * If your server worker is active on a client being served with the Service-Worker-Allowed header,
+        you can specify a list of max scopes for that worker.
+  * In Firefox, Service Worker APIs are hidden and cannot be used when the user is in private browsing mode.
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -254,7 +258,7 @@ export default Split
 ## Bonus ! ✨ hawt arrow functions ✨
 
 Not  all  browsers  support  arrow  functions ``` (() => {}) ``` but every
-browser  that  supports  Service  Worker  does. CONST and LET are cool too. All the things, no babel required.
+browser that supports Service Worker does, the same foes for CONST and LET, no babel required.
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -346,6 +350,12 @@ stuff about lighthouse audits
 ```
 
 ---
+## some heading
+
+<Image src={require("!file-loader!./img/lighthouse.jpg")} size="contain"/>
+
+---
+
 
 <CodeSurfer
   title="Bonus! -  Lazy load routes 😴"
@@ -383,6 +393,8 @@ examples of case studies
 <https://developers.google.com/web/progressive-web-apps>
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API>
+
+<https://serviceworke.rs/>
 
 <https://egghead.io/courses/offline-first-progressive-web-apps-pwa-in-vue-js>
 
