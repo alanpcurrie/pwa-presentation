@@ -134,10 +134,10 @@ The elements will vary by browser.
 
 ---
 
-## Meta data
+## Meta datas for non android browsers
 
-OS and Microsoft Edge and still need some metadata to make the app installable.
-First, for iOS, it needs three `<meta>` tags. Let's say meta name.
+IOS and Microsoft Edge and still need some metadata to make the app installable.
+First, for iOS, it needs three `<meta>` tags.
 They all start with apple-mobile-web-app and have a content property.
 
 
@@ -167,6 +167,17 @@ The appliction, most likely the same as the app manifest
 
 ---
 
+### Homescreen icon
+
+The icon that will be displayed in the iOS home screen. We will do this with a `<link>` tag.
+In the rel property, the apple-touch-icon, and add the path to the smaller icon here.
+
+we also have to add tags for edge...  The first one is TileImage. Again, we'll write here the path to the smaller icon.
+The other property is TileColor, which is the tile color that Windows uses to place the tile icon in the home screen.
+We'll just set it to black.
+
+---
+
 <CodeSurfer
   title="⚙️ PWA meta data example ⚙️"
   notes="some useful notes ✏️"
@@ -190,12 +201,22 @@ The appliction, most likely the same as the app manifest
 
 ## Service workers
 
-stuff about service workers
+A service worker is a script that runs in the background without access to the UI, and a requisite for a Progressive Web App.
+They can be used for caching requests and assets.
 
 ```notes
 - Create speaker notes in fenced code blocks
 ```
 export default Split
+
+---
+
+### More service workers
+
++ Service Workers are a virtual proxy between the browser and the network.
++ They run on a separate thread from the main JavaScript code of the page, and don't have any access to the DOM structure.
++ Non blocking API
++ You are able to give a Service Worker something to work on, and receive the result whenever it is ready using a Promise-based approach.
 
 ---
 
