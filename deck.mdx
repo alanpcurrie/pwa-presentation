@@ -51,7 +51,61 @@ export default Split
 
 ## App manifest
 
-stuff about the app manifest
+
+https://developer.mozilla.org/en-US/docs/Web/Manifest
+
+
+```notes
+- Create speaker notes in fenced code blocks
+```
+
+---
+
+## Display
+
+Defines the developers’ preferred display mode for the website.
+
+---
+
+### Browser
+
+The application opens in a conventional browser tab or new window, depending on the browser and platform. _This is the default._
+
+---
+
+### Fullscreen
+
+All of the available display area is used and no user agent chrome is shown. 	standalone
+
+---
+
+### Standalone
+
+  The application will look and feel like a standalone application.
+  This can include the application having a different window, its own icon in the application launcher, etc.
+  In this mode, the user agent will exclude UI elements for controlling navigation, but can include other UI elements such as a status bar.
+
+---
+
+### Minimal-ui
+
+The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation.
+The elements will vary by browser.
+
+---
+
+<CodeSurfer
+  title="⚙️ app manifest ⚙️"
+  notes="some useful notes ✏️"
+  code={require("!raw-loader!./examples/manifest.js")}
+  lang="javascript"
+  showNumbers={true}
+  theme={nightOwl}
+  dark={false}
+  steps={[
+    { lines: [27], notes: "Note for the first step ✏️" },
+  ]}
+/>
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -82,11 +136,34 @@ stuff about the app manifest
 
 ## Meta data
 
-stuff about meta data
+OS and Microsoft Edge and still need some metadata to make the app installable.
+First, for iOS, it needs three `<meta>` tags. Let's say meta name.
+They all start with apple-mobile-web-app and have a content property.
+
 
 ```notes
 - Create speaker notes in fenced code blocks
 ```
+
+---
+
+### Capable
+
+This meta tag tells iOS that this web app is installable.
+
+---
+
+### Status bar
+
+Configure the status-bar-style, which it can be default, which is just the user's status bar.
+
+IOS  - default, black, black-translucent
+
+---
+
+### Title
+
+The appliction, most likely the same as the app manifest
 
 ---
 
