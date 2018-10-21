@@ -238,6 +238,33 @@ export default Split
 export default Split
 
 ---
+parsed - When we first attempt to register a Service Worker, the user agent parses the script and obtains the entry point.
+If parsing is successful (and some other requirements, e.g. HTTPS, are met),
+we will have access to the Service Worker registration object.
+
+installing - The first event a service worker gets is install. It's triggered as soon as the worker executes,
+and it's only called once per service worker.
+
+installed - Once the Service Worker script has been parsed,
+the user agent attempts to install it and it moves to the installing state.
+
+activating - The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
+
+    If there is no current active worker already
+    If the self.skipWaiting() method is called in the Service Worker script
+    If the user has navigated away from the page, thereby releasing the previous active worker
+    If a specified period of time has passed, thereby releasing the previous active worker
+
+Activated - If activation is successful, the Service Worker moves to the active state.
+In this state, it is an active worker in full control of the document.
+
+redundant - A Service Worker can become redundant for one of the following reasons -
+
+    If the installing event failed
+    If the activating event failed
+    If a new Service Worker replaces it as the active service worker
+
+---
 
 ## Service workers scope 🎯
 
@@ -246,6 +273,21 @@ export default Split
   * If your server worker is active on a client being served with the Service-Worker-Allowed header,
         you can specify a list of max scopes for that worker.
   * In Firefox, Service Worker APIs are hidden and cannot be used when the user is in private browsing mode.
+
+```notes
+- Create speaker notes in fenced code blocks
+```
+
+export default Split
+
+---
+
+## Network Strategy
+
+With network strategies, you can tune which types of requests should
+get the freshest content possible and which should try to get responses
+from cache. That helps improve online performance by avoiding
+unnecessary network round trips for static assets.
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -295,6 +337,12 @@ using svg for offline images
 
 native application like push notifications
 
+A notification is a message that pops up on the user's device. Notifications can be triggered locally by an open application,
+or they can be "pushed" from the server to the user even when the app is not running.
+
+https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications
+
+
 ```notes
 - Create speaker notes in fenced code blocks
 ```
@@ -330,7 +378,8 @@ export default Split
 
 ## Performance 🏃💨
 
-stuff about Performance
+https://hnpwa.com/
+
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -342,17 +391,56 @@ export default Split
 
 ## Lighthouse audits 🔆
 
-stuff about lighthouse audits
+Lighthouse is an open-source, automated tool for improving the quality of web pages.
+You can run it against any web page, public or requiring authentication.
+It has audits for performance, accessibility, progressive web apps, and more.
 
 ---
 
-## here's a PWA i made earlier
+## here's a PWA I made earlier
 
 <https://pwa-chat-2a5f9.firebaseapp.com>
 
 ```notes
 - Create speaker notes in fenced code blocks
 ```
+
+---
+
+## Development Env.
+
+Mobile testing
+Ngrok is a service that relays your local environment on an external dns,
+`npm install -g ngrok`
+run
+`ngrok http 8080` browse to the external URL. win.
+
+---
+
+### Test Production
+
+service workers are a production feature so....
+
+emulate an HTTP server `sudo npm install -g serve`
+
+build project `npm run build`
+
+serve production files `serve dist`
+
+ more win.
+
+---
+
+### Intersction Observer api
+
+An observer is an instance of Intersection Observer. You create the instance and use this instance to observe a DOM element.
+You can observe when the element enters the viewport:
+
+---
+
+### UX Ehnancments.... that I didn't do
+
+navigator offline API for disabling button state for form post
 
 ---
 
@@ -382,11 +470,22 @@ stuff about lighthouse audits
 
 ## PWA busines case - stats and stuff 📈
 
-examples of case studies
+---
+
+
+<Image src={require("!file-loader!./img/business.gif")} size="contain"/>
 
 ```notes
 - Create speaker notes in fenced code blocks
 ```
+
+---
+
+<Image src={require("!file-loader!./img/pwa-stats.png")} size="contain"/>
+
+---
+
+<Image src={require("!file-loader!./img/businesstime.gif")} size="contain"/>
 
 ---
 
@@ -447,13 +546,5 @@ examples of case studies
 ---
 
 #  Thanks and questions 😘❓
-
----
-
-# image slide
-
-<Image src={require("!file-loader!./img/mr-motivator.jpg")} size="contain"/>
-
-export default Split
 
 ---
