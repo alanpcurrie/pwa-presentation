@@ -49,6 +49,12 @@ export default Split
 
 ---
 
+## App shell
+
+https://developers.google.com/web/fundamentals/architecture/app-shell
+
+---
+
 ## App manifest
 
 
@@ -238,27 +244,50 @@ export default Split
 export default Split
 
 ---
-parsed - When we first attempt to register a Service Worker, the user agent parses the script and obtains the entry point.
+
+Parsed
+
+When we first attempt to register a Service Worker, the user agent parses the script and obtains the entry point.
 If parsing is successful (and some other requirements, e.g. HTTPS, are met),
 we will have access to the Service Worker registration object.
 
-installing - The first event a service worker gets is install. It's triggered as soon as the worker executes,
+---
+
+Installing
+
+The first event a service worker gets is install. It's triggered as soon as the worker executes,
 and it's only called once per service worker.
 
-installed - Once the Service Worker script has been parsed,
+---
+
+Installed
+
+Once the Service Worker script has been parsed,
 the user agent attempts to install it and it moves to the installing state.
 
-activating - The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
+---
 
-    If there is no current active worker already
-    If the self.skipWaiting() method is called in the Service Worker script
-    If the user has navigated away from the page, thereby releasing the previous active worker
-    If a specified period of time has passed, thereby releasing the previous active worker
+Activating
 
-Activated - If activation is successful, the Service Worker moves to the active state.
-In this state, it is an active worker in full control of the document.
+The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
 
-redundant - A Service Worker can become redundant for one of the following reasons -
+  If there is no current active worker already
+  If the self.skipWaiting() method is called in the Service Worker script
+  If the user has navigated away from the page, thereby releasing the previous active worker
+  If a specified period of time has passed, thereby releasing the previous active worker
+
+---
+
+Activated
+
+  If activation is successful, the Service Worker moves to the active state.
+  In this state, it is an active worker in full control of the document.
+
+---
+
+Redundant
+
+A Service Worker can become redundant for one of the following reasons -
 
     If the installing event failed
     If the activating event failed
@@ -282,6 +311,10 @@ export default Split
 
 ---
 
+<Image src={require("!file-loader!./img/scope.png")} size="contain"/>
+
+---
+
 ## Network Strategy
 
 With network strategies, you can tune which types of requests should
@@ -294,11 +327,6 @@ unnecessary network round trips for static assets.
 ```
 
 export default Split
-
----
-
-<Image src={require("!file-loader!./img/scope.png")} size="contain"/>
-
 
 ---
 
@@ -315,7 +343,11 @@ browser that supports Service Worker does, the same foes for CONST and LET, no b
 
 ## Check online status ⛵️
 
-stuff about NavigatorOnline api
+Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline.
+The property sends updates whenever the browser's ability to connect to the network changes. The update occurs when the user follows links or when a script requests a remote page.
+For example, the property should return false when users click links soon after they lose internet connection.
+
+Use case - navigator offline API for disabling button state for form post
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -409,8 +441,7 @@ It has audits for performance, accessibility, progressive web apps, and more.
 
 ## Development Env.
 
-Mobile testing
-Ngrok is a service that relays your local environment on an external dns,
+Mobile testing - Ngrok is a service that relays your local environment on an external dns,
 `npm install -g ngrok`
 run
 `ngrok http 8080` browse to the external URL. win.
@@ -435,12 +466,6 @@ serve production files `serve dist`
 
 An observer is an instance of Intersection Observer. You create the instance and use this instance to observe a DOM element.
 You can observe when the element enters the viewport:
-
----
-
-### UX Ehnancments.... that I didn't do
-
-navigator offline API for disabling button state for form post
 
 ---
 
