@@ -1,24 +1,24 @@
 {
-    "name": "cropchat",
-    "short_name": "cropchat",
+    "name": "vue-pwa",
+    "short_name": "vue-pwa",
     "icons": [
       {
-        "src": "/static/img/icons/cropchat-icon-64x64.png",
+        "src": "/static/img/icons/vue-pwa-icon-64x64.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "/static/img/icons/cropchat-icon-128x128.png",
+        "src": "/static/img/icons/vue-pwa-icon-128x128.png",
         "sizes": "128x128",
         "type": "image/png"
       },
       {
-        "src": "/static/img/icons/cropchat-icon-256x256.png",
+        "src": "/static/img/icons/vue-pwa-icon-256x256.png",
         "sizes": "256x256",
         "type": "image/png"
       },
       {
-        "src": "/static/img/icons/cropchat-icon-512x512.png",
+        "src": "/static/img/icons/vue-pwa-icon-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
       }

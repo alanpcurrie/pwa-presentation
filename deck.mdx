@@ -51,11 +51,18 @@ export default Split
 
 ## App shell
 
-https://developers.google.com/web/fundamentals/architecture/app-shell
+The App shell concept is concerned with loading a minimal user interface as soon as possible and then caching it so it is available offline for subsequent visits before then loading all the contents of the app. That way, the next time someone visits the app from the device, the UI loads from the cache immediately and any new content is requested from the server (if it isn’t available in the cache already).
+
+This structure is fast, and also feels fast as the user sees "something" instantly, instead of a loading spinner or a blank page. It also allows the website to be accessible offline if the network connection is not available.
+
+We can control what is requested from the server and what is retrieved from the cache with a service worker
 
 ---
 
 ## App manifest
+
+The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 
 
 https://developer.mozilla.org/en-US/docs/Web/Manifest
@@ -67,9 +74,22 @@ https://developer.mozilla.org/en-US/docs/Web/Manifest
 
 ---
 
-## Display
+<CodeSurfer
+  title="⚙️ app manifest ⚙️"
+  notes="some useful notes ✏️"
+  code={require("!raw-loader!./examples/manifest.js")}
+  lang="javascript"
+  showNumbers={true}
+  theme={nightOwl}
+  dark={false}
+  steps={[
+    { lines: [27], notes: "Defines the developers’ preferred display mode for the website. ✏️" },
+  ]}
+/>
 
-Defines the developers’ preferred display mode for the website.
+```notes
+- Create speaker notes in fenced code blocks
+```
 
 ---
 
@@ -100,46 +120,6 @@ The elements will vary by browser.
 
 ---
 
-<CodeSurfer
-  title="⚙️ app manifest ⚙️"
-  notes="some useful notes ✏️"
-  code={require("!raw-loader!./examples/manifest.js")}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  dark={false}
-  steps={[
-    { lines: [27], notes: "Note for the first step ✏️" },
-  ]}
-/>
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
-<CodeSurfer
-  title="⚙️ app manifest ⚙️"
-  notes="some useful notes ✏️"
-  code={require("!raw-loader!./examples/manifest.js")}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  dark={false}
-  steps={[
-    { lines: [27, 28, 29], notes: "Note for the first step ✏️" },
-    { range: [1, 2] },
-    { tokens: { 1: [1, 2, 3] }, notes: "Note for the third step ✏️" }
-  ]}
-/>
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
 ## Meta data for non android browsers
 
 IOS and Microsoft Edge and still need some metadata to make the app installable.
@@ -150,20 +130,6 @@ They all start with apple-mobile-web-app and have a content property.
 ```notes
 - Create speaker notes in fenced code blocks
 ```
-
----
-
-### Capable
-
-This meta tag tells iOS that this web app is installable.
-
----
-
-### Status bar
-
-Configure the status-bar-style, which it can be default, which is just the user's status bar.
-
-IOS  - default, black, black-translucent
 
 ---
 
@@ -184,8 +150,22 @@ We'll just set it to black.
 
 ---
 
+### Capable
+
+This meta tag tells iOS that this web app is installable.
+
+---
+
+### Status bar
+
+Configure the status-bar-style, which it can be default, which is just the user's status bar.
+
+IOS  - default, black, black-translucent
+
+---
+
 <CodeSurfer
-  title="⚙️ PWA meta data example ⚙️"
+  title="⚙️ PWA meta data ⚙️"
   notes="some useful notes ✏️"
   code={require("!raw-loader!./examples/meta.html")}
   lang="html"
@@ -193,7 +173,7 @@ We'll just set it to black.
   theme={nightOwl}
   dark={false}
   steps={[
-    { lines: [17], notes: "Note for the first step ✏️" },
+    { lines: [7, 8, 16, 17], notes: "The appliction, most likely the same as the app manifest ✏️" },
     { range: [1, 2] },
     { tokens: { 1: [1, 2, 3] }, notes: "Note for the third step ✏️" }
   ]}
@@ -330,10 +310,10 @@ export default Split
 
 ---
 
-## Bonus ! ✨ hawt arrow functions ✨
+## ✨Bonus Nugget ! ✨ hawt arrow functions 🔥➡️
 
 Not  all  browsers  support  arrow  functions ``` (() => {}) ``` but every
-browser that supports Service Worker does, the same foes for CONST and LET, no babel required.
+browser that supports Service Worker does, the same goes for CONST and LET, no babel required.
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -475,7 +455,7 @@ You can observe when the element enters the viewport:
 
 
 <CodeSurfer
-  title="Bonus! -  Lazy load routes 😴"
+  title=" ✨Bonus Nugget !✨ -  Code splitting 🤸 "
   notes="some useful notes ✏️"
   code={require("!raw-loader!./examples/import.js")}
   lang="javascript"
@@ -483,7 +463,7 @@ You can observe when the element enters the viewport:
   theme={nightOwl}
   dark={false}
   steps={[
-    { lines: [3], notes: "Note for the first step ✏️" },
+    { lines: [3], notes: " Webpack's dynamic import function splits each into a separate build file. Then, when the user visits a different page, Webpack will asynchronously load the requested page's file. ✏️" },
   ]}
 />
 

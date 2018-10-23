@@ -3,6 +3,19 @@
 navigator.serviceWorker.register('service-worker.js', './');
 
 
+//First, we check if the browser support service worker, that is, if the navigator object has a serviceWorker property
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+        .then(function (registration) {
+            console.log('Service worker registered!');
+        })
+        .catch(function (err) {
+            console.log('Registration failed!');
+        })
+}
+
+
 //PROVIDING AN OFFLINE PAGE
 self.addEventListener('install', event => {
     event.waitUntil(caches.open('offline-fallbacks')
