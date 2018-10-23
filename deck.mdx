@@ -228,7 +228,9 @@ export default Split
 Parsed
 
 When we first attempt to register a Service Worker, the user agent parses the script and obtains the entry point.
+
 If parsing is successful (and some other requirements, e.g. HTTPS, are met),
+
 we will have access to the Service Worker registration object.
 
 ---
@@ -236,7 +238,8 @@ we will have access to the Service Worker registration object.
 Installing
 
 The first event a service worker gets is install. It's triggered as soon as the worker executes,
-and it's only called once per service worker.
+
+it's only called once per service worker.
 
 ---
 
@@ -258,6 +261,7 @@ and it's only called once per service worker.
 Installed
 
 Once the Service Worker script has been parsed,
+
 the user agent attempts to install it and it moves to the installing state.
 
 ---
@@ -267,8 +271,11 @@ Activating
 The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
 
   If there is no current active worker already
+
   If the self.skipWaiting() method is called in the Service Worker script
+
   If the user has navigated away from the page, thereby releasing the previous active worker
+
   If a specified period of time has passed, thereby releasing the previous active worker
 
 ---
@@ -276,6 +283,7 @@ The activating state will be triggered for a waiting Service Worker in one of th
 Activated
 
   If activation is successful, the Service Worker moves to the active state.
+
   In this state, it is an active worker in full control of the document.
 
 ---
@@ -284,9 +292,11 @@ Redundant
 
 A Service Worker can become redundant for one of the following reasons -
 
-    If the installing event failed
-    If the activating event failed
-    If a new Service Worker replaces it as the active service worker
+  If the installing event failed
+
+  If the activating event failed
+
+  If a new Service Worker replaces it as the active service worker
 
 ---
 
