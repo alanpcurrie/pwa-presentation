@@ -65,7 +65,7 @@ The web app manifest is a simple JSON file that tells the browser about your web
 Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 
 
-https://developer.mozilla.org/en-US/docs/Web/Manifest
+<https://developer.mozilla.org/en-US/docs/Web/Manifest>
 
 
 ```notes
@@ -340,6 +340,8 @@ export default Split
 Not  all  browsers  support  arrow  functions ``` (() => {}) ``` but every
 browser that supports Service Worker does, the same goes for CONST and LET, no babel required.
 
+<https://caniuse.com/#search=service%20worker>
+
 ```notes
 - Create speaker notes in fenced code blocks
 ```
@@ -377,7 +379,7 @@ native application like push notifications
 A notification is a message that pops up on the user's device. Notifications can be triggered locally by an open application,
 or they can be "pushed" from the server to the user even when the app is not running.
 
-https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications
+<https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications>
 
 
 ```notes
@@ -415,7 +417,7 @@ export default Split
 
 ## Performance 🏃💨
 
-https://hnpwa.com/
+<https://hnpwa.com/>
 
 
 ```notes
@@ -431,6 +433,10 @@ export default Split
 Lighthouse is an open-source, automated tool for improving the quality of web pages.
 You can run it against any web page, public or requiring authentication.
 It has audits for performance, accessibility, progressive web apps, and more.
+
+---
+
+<Image src={require("!file-loader!./img/lighthouse.jpg")} size="contain"/>
 
 ---
 
@@ -469,15 +475,13 @@ serve production files `serve dist`
 
 ### Intersction Observer api
 
-An observer is an instance of Intersection Observer. You create the instance and use this instance to observe a DOM element.
-You can observe when the element enters the viewport:
+The Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element
+
+ with an ancestor element or with a top-level document's viewport.
+
+ https://caniuse.com/#feat=intersectionobserver
 
 ---
-
-<Image src={require("!file-loader!./img/lighthouse.jpg")} size="contain"/>
-
----
-
 
 <CodeSurfer
   title=" ✨Bonus Nugget !✨ -  Code splitting 🤸 "
