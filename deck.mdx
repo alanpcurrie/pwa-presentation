@@ -20,12 +20,12 @@ export { dark as theme } from 'mdx-deck/themes'
   <meta property="og:image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
   <meta property="og:description" content="Progressive web app presentation" />
   <meta property="og:site_name" content="Progressive web app presentation" />
-  <meta property="article:section" content="Article Section (React? Design?)" />
+  <meta property="article:section" content="Progressive web app" />
 </Head>
 
-# 🤖 PWA Presentation 🤖
+# 🤖 PWA 🤖
 
-(progressive web applications)
+⭐⭐ progressive web applications ⭐⭐
 
 ---
 
@@ -49,17 +49,31 @@ export default Split
 
 ---
 
-## App shell
+## App shell 🐚
 
-The App shell concept is concerned with loading a minimal user interface as soon as possible and then caching it so it is available offline for subsequent visits before then loading all the contents of the app. That way, the next time someone visits the app from the device, the UI loads from the cache immediately and any new content is requested from the server (if it isn’t available in the cache already).
+The App shell concept is concerned with loading a minimal user interface as soon as possible and then caching it so it is available offline for subsequent visits before then loading all the contents of the app.
+
+---
+
+### App shell contiued.....
+
+The next time someone visits the app from the device, the UI loads from the cache immediately and any new content is requested from the server (if it isn’t available in the cache already).
+
+---
+
+### ...and a bit more about App shell
 
 This structure is fast, and also feels fast as the user sees "something" instantly, instead of a loading spinner or a blank page. It also allows the website to be accessible offline if the network connection is not available.
+
+---
+
+### Getting assets into the App shell
 
 We can control what is requested from the server and what is retrieved from the cache with a service worker
 
 ---
 
-## App manifest
+## App manifest 📖
 
 The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
 Having a manifest is required by Chrome to show the Add to Home Screen prompt.
@@ -99,17 +113,28 @@ The application opens in a conventional browser tab or new window, depending on 
 
 ---
 
-### Fullscreen
+<Image src={require("!file-loader!./img/browser.jpg")} size="contain"/>
 
-All of the available display area is used and no user agent chrome is shown. 	standalone
+---
+
+### Fullscreen
+All of the available display area is used and no user agent chrome is shown.
+
+---
+
+<Image src={require("!file-loader!./img/fullscreen.jpg")} size="contain"/>
 
 ---
 
 ### Standalone
 
-  The application will look and feel like a standalone application.
-  This can include the application having a different window, its own icon in the application launcher, etc.
-  In this mode, the user agent will exclude UI elements for controlling navigation, but can include other UI elements such as a status bar.
+The application will look and feel like a standalone application.
+This can include the application having a different window, its own icon in the application launcher, etc.
+In this mode, the user agent will exclude UI elements for controlling navigation, but can include other UI elements such as a status bar.
+
+---
+
+<Image src={require("!file-loader!./img/standalone.jpg")} size="contain"/>
 
 ---
 
@@ -117,6 +142,10 @@ All of the available display area is used and no user agent chrome is shown. 	st
 
 The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation.
 The elements will vary by browser.
+
+---
+
+### Sorry no pics 🤷
 
 ---
 
@@ -146,7 +175,6 @@ In the rel property, the apple-touch-icon, and add the path to the smaller icon 
 
 we also have to add tags for edge...  The first one is TileImage. Again, we'll write here the path to the smaller icon.
 The other property is TileColor, which is the tile color that Windows uses to place the tile icon in the home screen.
-We'll just set it to black.
 
 ---
 
@@ -335,6 +363,34 @@ export default Split
 
 ---
 
+## Precache 💸
+
+<https://github.com/GoogleChromeLabs/sw-precache>
+<https://www.npmjs.com/package/sw-precache>
+
+---
+
+Service Worker Precache is a module for generating a service worker that precaches resources.
+
+It integrates with your build process. Once configured, it detects all your static resources
+(HTML, JavaScript, CSS, images, etc.) and generates a hash of each file's contents.
+
+Information about each file's URL and versioned hash are stored in the generated service worker file,
+along with logic to serve those files cache-first and automatically keep those files up to date when changes are detected in subsequent builds.
+
+---
+
+## offline images ❌📷
+
+SW precache
+svg for offline messages
+
+```notes
+- Create speaker notes in fenced code blocks
+```
+
+---
+
 ## ✨Bonus Nugget ! ✨ hawt arrow functions 🔥➡️
 
 Not  all  browsers  support  arrow  functions ``` (() => {}) ``` but every
@@ -351,20 +407,12 @@ browser that supports Service Worker does, the same goes for CONST and LET, no b
 ## Check online status ⛵️
 
 Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline.
+
 The property sends updates whenever the browser's ability to connect to the network changes. The update occurs when the user follows links or when a script requests a remote page.
+
 For example, the property should return false when users click links soon after they lose internet connection.
 
 Use case - navigator offline API for disabling button state for form post
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
-## offline images ❌📷
-
-using svg for offline images
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -504,7 +552,11 @@ The Intersection Observer API provides a way to asynchronously observe changes i
 
 Stuff I didn't look into...
 
-indexDb <https://caniuse.com/#feat=indexeddb>
+indexDb
+
+<https://caniuse.com/#feat=indexeddb>
+
+<https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API>
 
 ---
 
