@@ -1,4 +1,3 @@
-// network strategy
 self.addEventListener('fetch', event => {
     // For navigation requests (HTML/content fetches):
     // 1. Try fetching from the network – we want fresh content if possible

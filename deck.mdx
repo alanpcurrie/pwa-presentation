@@ -90,13 +90,17 @@ Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 
 <CodeSurfer
   title="⚙️ app manifest ⚙️"
-  notes="some useful notes ✏️"
+  notes="The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+Having a manifest is required by Chrome to show the Add to Home Screen prompt.✏️"
   code={require("!raw-loader!./examples/manifest.js")}
   lang="javascript"
   showNumbers={true}
   theme={nightOwl}
   dark={false}
   steps={[
+    { range: [1,3], notes: "Defines the PWA NAME ✏️" },
+    { range: [10,14], notes: "Homescreen icon ✏️" },
+    { range: [29,30], notes: "default colour ✏️" },
     { lines: [27], notes: "Defines the developers’ preferred display mode for the website. ✏️" },
   ]}
 />
@@ -162,6 +166,22 @@ They all start with apple-mobile-web-app and have a content property.
 
 ---
 
+<CodeSurfer
+  title="⚙️ PWA meta data ⚙️"
+  notes="Android does most of this by default ✏️"
+  code={require("!raw-loader!./examples/meta.html")}
+  lang="html"
+  showNumbers={true}
+  theme={nightOwl}
+  dark={false}
+/>
+
+```notes
+- Create speaker notes in fenced code blocks
+```
+
+---
+
 ### Title
 
 The appliction, most likely the same as the app manifest
@@ -189,27 +209,6 @@ This meta tag tells iOS that this web app is installable.
 Configure the status-bar-style, which it can be default, which is just the user's status bar.
 
 IOS  - default, black, black-translucent
-
----
-
-<CodeSurfer
-  title="⚙️ PWA meta data ⚙️"
-  notes="some useful notes ✏️"
-  code={require("!raw-loader!./examples/meta.html")}
-  lang="html"
-  showNumbers={true}
-  theme={nightOwl}
-  dark={false}
-  steps={[
-    { lines: [7, 8, 16, 17], notes: "The appliction, most likely the same as the app manifest ✏️" },
-    { range: [1, 2] },
-    { tokens: { 1: [1, 2, 3] }, notes: "Note for the third step ✏️" }
-  ]}
-/>
-
-```notes
-- Create speaker notes in fenced code blocks
-```
 
 ---
 
@@ -273,14 +272,14 @@ it's only called once per service worker.
 
 <CodeSurfer
   title="⚙️ Service worker example⚙️"
-  notes="some useful notes ✏️"
   code={require("!raw-loader!./examples/serviceworker.js")}
   lang="javascript"
   showNumbers={true}
   theme={nightOwl}
   dark={false}
   steps={[
-    { lines: [27], notes: "Registering a service worker ✏️" },
+    { lines: [1], notes: "Registering a service worker, Browsers that support Service Worker expose service worker on the global navigator object. ✏️" },
+    { range: [3,11], notes: "Check if the browser supports service workers, if the navigator object has a serviceWorker property ✏️" },
   ]}
 />
 
@@ -300,7 +299,7 @@ The activating state will be triggered for a waiting Service Worker in one of th
 
   If there is no current active worker already
 
-  If the self.skipWaiting() method is called in the Service Worker script
+  If the `self.skipWaiting()` method is called in the Service Worker script
 
   If the user has navigated away from the page, thereby releasing the previous active worker
 
@@ -362,6 +361,17 @@ unnecessary network round trips for static assets.
 export default Split
 
 ---
+<CodeSurfer
+  title="⚙️ Service worker example⚙️"
+  code={require("!raw-loader!./examples/serviceworker.2.js")}
+  lang="javascript"
+  showNumbers={true}
+  theme={nightOwl}
+  dark={false}
+/>
+
+
+---
 
 ## Precache 💸
 
@@ -403,8 +413,7 @@ along with logic to serve those files cache-first and automatically keep those f
 
 ## offline images ❌📷
 
-SW precache
-svg for offline messages
+SW precache svg for offline messages and images from external resources
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -466,33 +475,6 @@ or they can be "pushed" from the server to the user even when the app is not run
 ```notes
 - Create speaker notes in fenced code blocks
 ```
-
----
-
-<CodeSurfer
-  code={`const code = {
-  example: [
-    'one',
-    'two'
-  ]
-}`}
-  lang="javascript"
-  showNumbers={false}
-  dark={false}
-  steps={[
-    { lines: [1], notes: "Note for the first step" },
-    { range: [3, 4] },
-    { tokens: { 3: [1, 2, 3] }, notes: "Note for the third step" }
-  ]}
-/>
-
-## Split layout
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
-export default Split
 
 ---
 
