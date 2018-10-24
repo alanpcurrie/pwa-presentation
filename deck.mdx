@@ -25,7 +25,7 @@ export { dark as theme } from 'mdx-deck/themes'
 
 # 🤖 PWA 🤖
 
-⭐⭐ progressive web applications ⭐⭐
+⭐⭐ Progressive Web Applications ⭐⭐
 
 ---
 
@@ -234,7 +234,7 @@ export default Split
 
 ---
 
-## Service workers life cycle 🧟
+### Service workers life cycle 🧟
 
 <Appear>
   <p></p>
@@ -253,7 +253,7 @@ export default Split
 
 ---
 
-Parsed
+### Parsed
 
 When we first attempt to register a Service Worker, the user agent parses the script and obtains the entry point.
 
@@ -263,7 +263,7 @@ we will have access to the Service Worker registration object.
 
 ---
 
-Installing
+### Installing
 
 The first event a service worker gets is install. It's triggered as soon as the worker executes,
 
@@ -286,7 +286,7 @@ it's only called once per service worker.
 
 ---
 
-Installed
+### Installed
 
 Once the Service Worker script has been parsed,
 
@@ -294,7 +294,7 @@ the user agent attempts to install it and it moves to the installing state.
 
 ---
 
-Activating
+### Activating
 
 The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
 
@@ -308,7 +308,7 @@ The activating state will be triggered for a waiting Service Worker in one of th
 
 ---
 
-Activated
+### Activated
 
   If activation is successful, the Service Worker moves to the active state.
 
@@ -316,7 +316,7 @@ Activated
 
 ---
 
-Redundant
+### Redundant
 
 A Service Worker can become redundant for one of the following reasons -
 
@@ -328,7 +328,7 @@ A Service Worker can become redundant for one of the following reasons -
 
 ---
 
-## Service workers scope 🎯
+### Service workers scope 🎯
 
   * The service worker will only catch requests from clients under the service worker's scope.
   * The max scope for a service worker is the location of the worker.
@@ -366,9 +366,11 @@ export default Split
 ## Precache 💸
 
 <https://github.com/GoogleChromeLabs/sw-precache>
+
 <https://www.npmjs.com/package/sw-precache>
 
 ---
+## Precache continued...
 
 Service Worker Precache is a module for generating a service worker that precaches resources.
 
@@ -377,6 +379,25 @@ It integrates with your build process. Once configured, it detects all your stat
 
 Information about each file's URL and versioned hash are stored in the generated service worker file,
 along with logic to serve those files cache-first and automatically keep those files up to date when changes are detected in subsequent builds.
+
+---
+
+<CodeSurfer
+  title=" Service Worker Precache 💸 "
+  notes="some useful notes ✏️"
+  code={require("!raw-loader!./examples/webpack-precache.js")}
+  lang="javascript"
+  showNumbers={true}
+  theme={nightOwl}
+  dark={false}
+  steps={[
+    { lines: [106, 143], notes: " Service Worker Precache is a module for generating a service worker that precaches resources. ✏️" },
+  ]}
+/>
+
+```notes
+- Create speaker notes in fenced code blocks
+```
 
 ---
 
@@ -404,15 +425,25 @@ browser that supports Service Worker does, the same goes for CONST and LET, no b
 
 ---
 
-## Check online status ⛵️
+## Navigator API - Check online status ⛵️
 
 Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline.
+
+---
+
+### More Navigator
 
 The property sends updates whenever the browser's ability to connect to the network changes. The update occurs when the user follows links or when a script requests a remote page.
 
 For example, the property should return false when users click links soon after they lose internet connection.
 
-Use case - navigator offline API for disabling button state for form post
+---
+
+### Using the Navigator
+
+**USE CASE** - navigator offline API for disabling button state for form post
+
+<https://caniuse.com/#feat=online-status>
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -420,12 +451,14 @@ Use case - navigator offline API for disabling button state for form post
 
 ---
 
-## push notifications 🐏
+## Push Notifications 🐏
 
 native application like push notifications
 
 A notification is a message that pops up on the user's device. Notifications can be triggered locally by an open application,
 or they can be "pushed" from the server to the user even when the app is not running.
+
+**USE CASE** - new content alert, offline warning alert
 
 <https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications>
 
@@ -501,9 +534,14 @@ It has audits for performance, accessibility, progressive web apps, and more.
 ## Development Env.
 
 Mobile testing - Ngrok is a service that relays your local environment on an external dns,
+
 `npm install -g ngrok`
+
 run
-`ngrok http 8080` browse to the external URL. win.
+
+`ngrok http 8080`
+
+browse to the external URL. win.
 
 ---
 
@@ -521,13 +559,20 @@ serve production files `serve dist`
 
 ---
 
-### Intersction Observer API 👀
+<Image src={require("!file-loader!./img/win.gif")} size="contain"/>
+
+---
+
+### Intersection Observer API 👀
 
 The Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element
 
  with an ancestor element or with a top-level document's viewport.
 
- https://caniuse.com/#feat=intersectionobserver
+**USE CASE** lazy loading images
+
+
+ <https://caniuse.com/#feat=intersectionobserver>
 
 ---
 
