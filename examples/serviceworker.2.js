@@ -49,8 +49,8 @@ self.addEventListener('fetch', event => {
         event.respondWith(
             findInCache(req) // 1. cache-first
             .catch(err => fetch(req)) // 2. network fallback
-            .then(res => addToCache(req, res), // 3. read-through
-                caching err => fallbackImage()) // 4. offline fallback
+            .then(res => addToCache(req, res), // 3. read-through caching
+                 err => fallbackImage()) // 4. offline fallback
         );
     }
 });
