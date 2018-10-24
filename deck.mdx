@@ -69,13 +69,13 @@ This structure is fast, and also feels fast as the user sees "something" instant
 
 ### Getting assets into the App shell
 
-We can control what is requested from the server and what is retrieved from the cache with a service worker
+We can control what is requested from the server and what is retrieved from the cache with a service worker... more on that later.... 🎉
 
 ---
 
 ## App manifest 📖
 
-The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
 Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 
 
@@ -384,14 +384,14 @@ along with logic to serve those files cache-first and automatically keep those f
 
 <CodeSurfer
   title=" Service Worker Precache 💸 "
-  notes="some useful notes ✏️"
+  notes="Service Worker Precache is a module for generating a service worker that precaches resources. ✏️"
   code={require("!raw-loader!./examples/webpack-precache.js")}
   lang="javascript"
   showNumbers={true}
   theme={nightOwl}
   dark={false}
   steps={[
-    { lines: [106, 143], notes: " Service Worker Precache is a module for generating a service worker that precaches resources. ✏️" },
+    { range: [22,29], notes: " URL Patterns for caching images from the cat API ✏️" },
   ]}
 />
 
