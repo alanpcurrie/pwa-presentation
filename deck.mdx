@@ -57,13 +57,17 @@ The App shell concept is concerned with loading a minimal user interface as soon
 
 ### App shell contiued.....
 
-The next time someone visits the app from the device, the UI loads from the cache immediately and any new content is requested from the server (if it isn’t available in the cache already).
+The next time someone visits the app from the device.
+
+The UI loads from the cache immediately and any new content is requested from the server (if it isn’t available in the cache already).
 
 ---
 
 ### ...and a bit more about App shell
 
-This structure is fast, and also feels fast as the user sees "something" instantly, instead of a loading spinner or a blank page. It also allows the website to be accessible offline if the network connection is not available.
+This structure is fast, and also feels fast as the user sees "something" instantly,
+
+instead of a loading spinner or a blank page. It also allows the website to be accessible offline if the network connection is not available.
 
 ---
 
@@ -76,6 +80,7 @@ We can control what is requested from the server and what is retrieved from the 
 ## App manifest 📖
 
 The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+
 Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 
 
@@ -133,7 +138,9 @@ All of the available display area is used and no user agent chrome is shown.
 ### Standalone
 
 The application will look and feel like a standalone application.
+
 This can include the application having a different window, its own icon in the application launcher, etc.
+
 In this mode, the user agent will exclude UI elements for controlling navigation, but can include other UI elements such as a status bar.
 
 ---
@@ -156,8 +163,8 @@ The elements will vary by browser.
 ## Meta data for non android browsers
 
 IOS and Microsoft Edge and still need some metadata to make the app installable.
-First, for iOS, it needs three `<meta>` tags.
-They all start with apple-mobile-web-app and have a content property.
+
+For iOS, it needs three `<meta>` tags. They all start with apple-mobile-web-app and have a content property.
 
 
 ```notes
@@ -193,7 +200,7 @@ The appliction, most likely the same as the app manifest
 The icon that will be displayed in the iOS home screen. We will do this with a `<link>` tag.
 In the rel property, the apple-touch-icon, and add the path to the smaller icon here.
 
-we also have to add tags for edge...  The first one is TileImage. Again, we'll write here the path to the smaller icon.
+We also have to add tags for edge...  The first one is TileImage. Again, we'll write here the path to the smaller icon.
 The other property is TileColor, which is the tile color that Windows uses to place the tile icon in the home screen.
 
 ---
@@ -362,7 +369,7 @@ export default Split
 
 ---
 <CodeSurfer
-  title="⚙️ Service worker example⚙️"
+  title="⚙️ SW Network strategy  - fetch from cache ⚙️"
   code={require("!raw-loader!./examples/serviceworker.2.js")}
   lang="javascript"
   showNumbers={true}
@@ -401,7 +408,7 @@ along with logic to serve those files cache-first and automatically keep those f
   theme={nightOwl}
   dark={false}
   steps={[
-    { range: [22,29], notes: " URL Patterns for caching images from the cat API ✏️" },
+    { range: [22,29], notes: " URL Patterns for caching images from the cat API - images can be viewed offline ✏️" },
   ]}
 />
 
@@ -411,17 +418,7 @@ along with logic to serve those files cache-first and automatically keep those f
 
 ---
 
-## offline images ❌📷
-
-SW precache svg for offline messages and images from external resources
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
-## ✨Bonus Nugget ! ✨ hawt arrow functions 🔥➡️
+## ✨Bonus Nugget ! ✨ Fat Arrow Functions 🔥➡️
 
 Not  all  browsers  support  arrow  functions ``` (() => {}) ``` but every
 browser that supports Service Worker does, the same goes for CONST and LET, no babel required.
@@ -467,7 +464,7 @@ native application like push notifications
 A notification is a message that pops up on the user's device. Notifications can be triggered locally by an open application,
 or they can be "pushed" from the server to the user even when the app is not running.
 
-**USE CASE** - new content alert, offline warning alert
+**USE CASE** - fresh content alert, offline warning alert
 
 <https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications>
 
@@ -494,6 +491,7 @@ export default Split
 ## Lighthouse audits 🔆
 
 Lighthouse is an open-source, automated tool for improving the quality of web pages.
+
 You can run it against any web page, public or requiring authentication.
 It has audits for performance, accessibility, progressive web apps, and more.
 
@@ -560,7 +558,7 @@ The Intersection Observer API provides a way to asynchronously observe changes i
 
 <CodeSurfer
   title=" ✨Bonus Nugget !✨ -  Code splitting 🤸 "
-  notes="some useful notes ✏️"
+  notes="Chunking that monolithic Js bundle ✏️"
   code={require("!raw-loader!./examples/import.js")}
   lang="javascript"
   showNumbers={true}
