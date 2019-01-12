@@ -1,23 +1,35 @@
-import { Appear, Head, Image  } from 'mdx-deck'
-import { FullScreenCode, Invert, Split } from 'mdx-deck/layouts'
-import { CodeSurfer } from "mdx-deck-code-surfer"
-import nightOwl from "prism-react-renderer/themes/nightOwl"
-export { dark as theme } from 'mdx-deck/themes'
+import { Appear, Head, Image } from "mdx-deck";
+import { FullScreenCode, Invert, Split } from "mdx-deck/layouts";
+import { CodeSurfer } from "mdx-deck-code-surfer";
+import nightOwl from "prism-react-renderer/themes/nightOwl";
+export { dark as theme } from "mdx-deck/themes";
 
 <Head>
   <title>Progressive web app presentation</title>
   <meta itemProp="name" content="Progressive web app presentation" />
   <meta itemProp="description" content="Progressive web app presentation" />
-  <meta itemProp="image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
+  <meta
+    itemProp="image"
+    content="https://api.adorable.io/avatars/285/abott@adorable.png"
+  />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@_AlanCurrie" />
   <meta name="twitter:title" content="Progressive web app presentation" />
   <meta name="twitter:description" content="Progressive web app presentation" />
-  <meta name="twitter:image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
+  <meta
+    name="twitter:image"
+    content="https://api.adorable.io/avatars/285/abott@adorable.png"
+  />
   <meta property="og:title" content="Progressive web app presentation" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://reverent-rosalind-f11320.netlify.com/" />
-  <meta property="og:image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
+  <meta
+    property="og:url"
+    content="https://reverent-rosalind-f11320.netlify.com/"
+  />
+  <meta
+    property="og:image"
+    content="https://api.adorable.io/avatars/285/abott@adorable.png"
+  />
   <meta property="og:description" content="Progressive web app presentation" />
   <meta property="og:site_name" content="Progressive web app presentation" />
   <meta property="article:section" content="Progressive web app" />
@@ -34,11 +46,23 @@ export { dark as theme } from 'mdx-deck/themes'
 ### Progressive Web Apps are user experiences that have the reach of the web, and are:
 
 <Appear>
-  <p></p>
-  <p>Reliable - Load instantly and never show the downasaur, even in uncertain network conditions.</p>
-  <p>Fast - Respond quickly to user interactions with silky smooth animations and no janky scrolling.</p>
-  <p>Engaging - Feel like a natural app on the device, with an immersive user experience.</p>
-  <p>This new level of quality allows Progressive Web Apps to earn a place on the user's home screen.</p>
+  <p />
+  <p>
+    Reliable - Load instantly and never show the downasaur, even in uncertain
+    network conditions.
+  </p>
+  <p>
+    Fast - Respond quickly to user interactions with silky smooth animations and
+    no janky scrolling.
+  </p>
+  <p>
+    Engaging - Feel like a natural app on the device, with an immersive user
+    experience.
+  </p>
+  <p>
+    This new level of quality allows Progressive Web Apps to earn a place on the
+    user's home screen.
+  </p>
 </Appear>
 
 ```notes
@@ -83,9 +107,7 @@ The web app manifest is a JSON file that tells the browser about your web applic
 
 Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 
-
 <https://developer.mozilla.org/en-US/docs/Web/Manifest>
-
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -103,10 +125,14 @@ Having a manifest is required by Chrome to show the Add to Home Screen prompt.�
   theme={nightOwl}
   dark={false}
   steps={[
-    { range: [1,3], notes: "Defines the PWA NAME ✏️" },
-    { range: [10,14], notes: "Homescreen icon ✏️" },
-    { range: [29,30], notes: "default colour ✏️" },
-    { lines: [27], notes: "Defines the developers’ preferred display mode for the website. ✏️" },
+    { range: [1, 3], notes: "Defines the PWA NAME ✏️" },
+    { range: [10, 14], notes: "Homescreen icon ✏️" },
+    { range: [29, 30], notes: "default colour ✏️" },
+    {
+      lines: [27],
+      notes:
+        "Defines the developers’ preferred display mode for the website. ✏️"
+    }
   ]}
 />
 
@@ -122,16 +148,17 @@ The application opens in a conventional browser tab or new window, depending on 
 
 ---
 
-<Image src={require("!file-loader!./img/browser.jpg")} size="contain"/>
+<Image src={require("!file-loader!./img/browser.jpg")} size="contain" />
 
 ---
 
 ### Fullscreen
+
 All of the available display area is used and no user agent chrome is shown.
 
 ---
 
-<Image src={require("!file-loader!./img/fullscreen.jpg")} size="contain"/>
+<Image src={require("!file-loader!./img/fullscreen.jpg")} size="contain" />
 
 ---
 
@@ -145,7 +172,7 @@ In this mode, the user agent will exclude UI elements for controlling navigation
 
 ---
 
-<Image src={require("!file-loader!./img/standalone.jpg")} size="contain"/>
+<Image src={require("!file-loader!./img/standalone.jpg")} size="contain" />
 
 ---
 
@@ -165,7 +192,6 @@ The elements will vary by browser.
 IOS and Microsoft Edge and still need some metadata to make the app installable.
 
 For iOS, it needs three `<meta>` tags. They all start with apple-mobile-web-app and have a content property.
-
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -200,7 +226,7 @@ The appliction, most likely the same as the app manifest
 The icon that will be displayed in the iOS home screen. We will do this with a `<link>` tag.
 In the rel property, the apple-touch-icon, and add the path to the smaller icon here.
 
-We also have to add tags for edge...  The first one is TileImage. Again, we'll write here the path to the smaller icon.
+We also have to add tags for edge... The first one is TileImage. Again, we'll write here the path to the smaller icon.
 The other property is TileColor, which is the tile color that Windows uses to place the tile icon in the home screen.
 
 ---
@@ -215,7 +241,7 @@ This meta tag tells iOS that this web app is installable.
 
 Configure the status-bar-style, which it can be default, which is just the user's status bar.
 
-IOS  - default, black, black-translucent
+IOS - default, black, black-translucent
 
 ---
 
@@ -227,23 +253,24 @@ They can be used for caching requests and assets.
 ```notes
 - Create speaker notes in fenced code blocks
 ```
+
 export default Split
 
 ---
 
 ### More service workers
 
-+ Service Workers are a virtual proxy between the browser and the network.
-+ They run on a separate thread from the main JavaScript code of the page, and don't have any access to the DOM structure.
-+ Non blocking API
-+ You are able to give a Service Worker something to work on, and receive the result whenever it is ready using a Promise-based approach.
+- Service Workers are a virtual proxy between the browser and the network.
+- They run on a separate thread from the main JavaScript code of the page, and don't have any access to the DOM structure.
+- Non blocking API
+- You are able to give a Service Worker something to work on, and receive the result whenever it is ready using a Promise-based approach.
 
 ---
 
 ### Service workers life cycle 🧟
 
 <Appear>
-  <p></p>
+  <p />
   <p>Parsed</p>
   <p>Installed</p>
   <p>Activating</p>
@@ -285,8 +312,16 @@ it's only called once per service worker.
   theme={nightOwl}
   dark={false}
   steps={[
-    { lines: [1], notes: "Registering a service worker, Browsers that support Service Worker expose service worker on the global navigator object. ✏️" },
-    { range: [3,11], notes: "Check if the browser supports service workers, if the navigator object has a serviceWorker property ✏️" },
+    {
+      lines: [1],
+      notes:
+        "Registering a service worker, Browsers that support Service Worker expose service worker on the global navigator object. ✏️"
+    },
+    {
+      range: [3, 11],
+      notes:
+        "Check if the browser supports service workers, if the navigator object has a serviceWorker property ✏️"
+    }
   ]}
 />
 
@@ -304,21 +339,21 @@ the user agent attempts to install it and it moves to the installing state.
 
 The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
 
-  If there is no current active worker already
+If there is no current active worker already
 
-  If the `self.skipWaiting()` method is called in the Service Worker script
+If the `self.skipWaiting()` method is called in the Service Worker script
 
-  If the user has navigated away from the page, thereby releasing the previous active worker
+If the user has navigated away from the page, thereby releasing the previous active worker
 
-  If a specified period of time has passed, thereby releasing the previous active worker
+If a specified period of time has passed, thereby releasing the previous active worker
 
 ---
 
 ### Activated
 
-  If activation is successful, the Service Worker moves to the active state.
+If activation is successful, the Service Worker moves to the active state.
 
-  In this state, it is an active worker in full control of the document.
+In this state, it is an active worker in full control of the document.
 
 ---
 
@@ -326,21 +361,21 @@ The activating state will be triggered for a waiting Service Worker in one of th
 
 A Service Worker can become redundant for one of the following reasons -
 
-  If the installing event failed
+If the installing event failed
 
-  If the activating event failed
+If the activating event failed
 
-  If a new Service Worker replaces it as the active service worker
+If a new Service Worker replaces it as the active service worker
 
 ---
 
 ### Service workers scope 🎯
 
-  * The service worker will only catch requests from clients under the service worker's scope.
-  * The max scope for a service worker is the location of the worker.
-  * If your server worker is active on a client being served with the Service-Worker-Allowed header,
-        you can specify a list of max scopes for that worker.
-  * In Firefox, Service Worker APIs are hidden and cannot be used when the user is in private browsing mode.
+- The service worker will only catch requests from clients under the service worker's scope.
+- The max scope for a service worker is the location of the worker.
+- If your server worker is active on a client being served with the Service-Worker-Allowed header,
+  you can specify a list of max scopes for that worker.
+- In Firefox, Service Worker APIs are hidden and cannot be used when the user is in private browsing mode.
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -350,7 +385,7 @@ export default Split
 
 ---
 
-<Image src={require("!file-loader!./img/scope.png")} size="contain"/>
+<Image src={require("!file-loader!./img/scope.png")} size="contain" />
 
 ---
 
@@ -368,6 +403,7 @@ unnecessary network round trips for static assets.
 export default Split
 
 ---
+
 <CodeSurfer
   title="⚙️ SW Network strategy  - fetch from cache ⚙️"
   code={require("!raw-loader!./examples/serviceworker.2.js")}
@@ -376,7 +412,6 @@ export default Split
   theme={nightOwl}
   dark={false}
 />
-
 
 ---
 
@@ -387,6 +422,7 @@ export default Split
 <https://www.npmjs.com/package/sw-precache>
 
 ---
+
 ## Precache continued...
 
 Service Worker Precache is a module for generating a service worker that precaches resources.
@@ -408,7 +444,11 @@ along with logic to serve those files cache-first and automatically keep those f
   theme={nightOwl}
   dark={false}
   steps={[
-    { range: [22,29], notes: " URL Patterns for caching images from the cat API - images can be viewed offline ✏️" },
+    {
+      range: [22, 29],
+      notes:
+        " URL Patterns for caching images from the cat API - images can be viewed offline ✏️"
+    }
   ]}
 />
 
@@ -420,7 +460,7 @@ along with logic to serve those files cache-first and automatically keep those f
 
 ## ✨Bonus Nugget ! ✨ Fat Arrow Functions 🔥➡️
 
-Not  all  browsers  support  arrow  functions ``` (() => {}) ``` but every
+Not all browsers support arrow functions `(() => {})` but every
 browser that supports Service Worker does, the same goes for CONST and LET, no babel required.
 
 <https://caniuse.com/#search=service%20worker>
@@ -468,7 +508,6 @@ or they can be "pushed" from the server to the user even when the app is not run
 
 <https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications>
 
-
 ```notes
 - Create speaker notes in fenced code blocks
 ```
@@ -478,7 +517,6 @@ or they can be "pushed" from the server to the user even when the app is not run
 ## Performance 🏃💨
 
 <https://hnpwa.com/>
-
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -497,7 +535,7 @@ It has audits for performance, accessibility, progressive web apps, and more.
 
 ---
 
-<Image src={require("!file-loader!./img/lighthouse.jpg")} size="contain"/>
+<Image src={require("!file-loader!./img/lighthouse.jpg")} size="contain" />
 
 ---
 
@@ -535,11 +573,11 @@ build project `npm run build`
 
 serve production files `serve dist`
 
- more win.
+more win.
 
 ---
 
-<Image src={require("!file-loader!./img/win.gif")} size="contain"/>
+<Image src={require("!file-loader!./img/win.gif")} size="contain" />
 
 ---
 
@@ -547,12 +585,11 @@ serve production files `serve dist`
 
 The Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element
 
- with an ancestor element or with a top-level document's viewport.
+with an ancestor element or with a top-level document's viewport.
 
 **USE CASE** lazy loading images
 
-
- <https://caniuse.com/#feat=intersectionobserver>
+<https://caniuse.com/#feat=intersectionobserver>
 
 ---
 
@@ -565,7 +602,11 @@ The Intersection Observer API provides a way to asynchronously observe changes i
   theme={nightOwl}
   dark={false}
   steps={[
-    { lines: [3], notes: " Webpack's dynamic import function splits each into a separate build file. Then, when the user visits a different page, Webpack will asynchronously load the requested page's file. ✏️" },
+    {
+      lines: [3],
+      notes:
+        " Webpack's dynamic import function splits each into a separate build file. Then, when the user visits a different page, Webpack will asynchronously load the requested page's file. ✏️"
+    }
   ]}
 />
 
@@ -589,8 +630,7 @@ indexDb
 
 ---
 
-
-<Image src={require("!file-loader!./img/business.gif")} size="contain"/>
+<Image src={require("!file-loader!./img/business.gif")} size="contain" />
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -598,11 +638,11 @@ indexDb
 
 ---
 
-<Image src={require("!file-loader!./img/pwa-stats.png")} size="contain"/>
+<Image src={require("!file-loader!./img/pwa-stats.png")} size="contain" />
 
 ---
 
-<Image src={require("!file-loader!./img/businesstime.gif")} size="contain"/>
+<Image src={require("!file-loader!./img/businesstime.gif")} size="contain" />
 
 ---
 
@@ -645,7 +685,9 @@ indexDb
 ---
 
 # slides built with mdx-deck ⚛️
+
 # & codesurfer 🏄
+
 ## hosted on netlify 👻
 
 <https://github.com/jxnblk/mdx-deck>
@@ -662,6 +704,6 @@ indexDb
 
 ---
 
-#  Thanks and questions 😘❓
+# Thanks and questions 😘❓
 
 ---
