@@ -1,4 +1,4 @@
-People
+# People
 
 | :bowtie: `:bowtie:` | :smile: `:smile:` | :laughing: `:laughing:` |
 |---|---|---|
@@ -65,7 +65,7 @@ People
 | :feelsgood: `:feelsgood:` | :finnadie: `:finnadie:` | :goberserk: `:goberserk:` |
 | :godmode: `:godmode:` | :hurtrealbad: `:hurtrealbad:` | :rage1: `:rage1:` |
 | :rage2: `:rage2:` | :rage3: `:rage3:` | :rage4: `:rage4:` |
-| :suspect: `:suspect:` | :trollface: `:trollface:` | 
+| :suspect: `:suspect:` | :trollface: `:trollface:` |
 
 Nature
 
@@ -309,4 +309,3 @@ Symbols
 | :large_blue_circle: `:large_blue_circle:` | :large_blue_diamond: `:large_blue_diamond:` | :large_orange_diamond: `:large_orange_diamond:` |
 | :small_blue_diamond: `:small_blue_diamond:` | :small_orange_diamond: `:small_orange_diamond:` | :small_red_triangle: `:small_red_triangle:` |
 | :small_red_triangle_down: `:small_red_triangle_down:` | :shipit: `:shipit:` |
-

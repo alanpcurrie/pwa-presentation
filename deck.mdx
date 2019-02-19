@@ -28,10 +28,6 @@ export { dark as theme } from 'mdx-deck/themes'
 
 ---
 
-# Linting,  static type checking and unit tests -  bffs ❤️
-
----
-
 #  Testing
 ### a test is something that throws an error if there is a problem
 e2e visual-regression integration unit
@@ -68,40 +64,55 @@ e2e visual-regression integration unit
 
 ---
 
-# Simple unit test demo
+#  unit test demo
 
 ---
 
-# Jest
+# Jest - unit testing framework
 
 ---
 
 # Jest demo
- naming and structuring tests
-jest assestions
-Jest snapshot
-jest watch
-jest axe
 
-ts.
 
 ```notes
 
+ naming and structuring tests
+  jest assestions
+  Jest snapshot
+  jest watch
+  jest axe
+  jest lighthouse
+
 We can add the --watch flag to this to keep this running in the background as we create and edit new tesk
+
+Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
+
+A typical snapshot test case for a mobile app renders a UI component, takes a snapshot,
+then compares it to a reference snapshot file stored alongside the test. The test will fail
+if the two snapshots do not match: either the change is unexpected,
+or the reference snapshot needs to be updated to the new version of the UI component.
 
 ```
 
 ---
 
 # Code Coverage
-instanbul under the hood
+
 
 ```notes
+
+    instanbul under the hood
+
+    <https://istanbul.js.org/>
 
     Function coverage Has each function (or subroutine) in the program been called?
     Statement coverage Has each statement in the program been executed?
     Branch coverage Has each branch  of each control structure (such as in if and case statements) been executed? For example, given an if statement, have both the true and false branches been executed? Another way of saying this is, has every edge in the program been executed?
     Line coverage has each executable line in the source file been executed?
+
+    <https://stackoverflow.com/questions/90002/what-is-a-reasonable-code-coverage-for-unit-tests-and-why>
+    <https://www.google.com/search?client=firefox-b-d&biw=1266&bih=1343&tbm=isch&sa=1&ei=6htrXOOMBZqT1fAPq_-f6AU&q=code+coverage+meme&oq=code+coverage+meme&gs_l=img.3..0.66126.66580..66874...0.0..0.63.299.5......1....1..gws-wiz-img.......0i7i30.S-6375eK0hQ#imgrc=tRD2nlrLt8WvgM:>
 
 
 ```
