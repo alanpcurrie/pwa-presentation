@@ -37,7 +37,13 @@ export { light as theme } from 'mdx-deck/themes'
 
 ---
 
-# What is unit testing ✔️🔬
+<https://kentcdodds.com/links/>
+
+<https://testingjavascript.com/>
+
+---
+
+#  unit testing ✔️🔬
 
 
 
@@ -47,7 +53,7 @@ export { light as theme } from 'mdx-deck/themes'
 
 ---
 
-#  AAA (Arrange, Act, Assert)
+#  AAA (Arrange, Act, Assert) 📋
 
 ```notes
 
@@ -62,11 +68,7 @@ export { light as theme } from 'mdx-deck/themes'
 
 ---
 
-#  unit test demo
-
----
-
-# Jest - unit testing framework 🤡
+#  unit test demo 💫
 
 ---
 
@@ -122,10 +124,35 @@ or the reference snapshot needs to be updated to the new version of the UI compo
 
 ---
 
+How do we know all our tests are running? 🤔
+
+```notes
+
+<https://jestjs.io/docs/en/expect#expectassertionsnumber>
+
+```
+
+---
+
+<Image src={require("!file-loader!./img/dr-evil.gif")} size="contain" />
+
+```notes
+
+
+```
+
+---
+
 # TDD 🏎️
 
 ```notes
-- Create speaker notes in fenced code blocks
+Start by writing a test
+Run the test and any other tests. At this point, your newly added test should fail. If it doesn’t fail here, it might not be testing the right thing and thus has a bug in it.
+Write the minimum amount of code required to make the test pass
+Run the tests to check the new test passes
+Optionally refactor your code
+Repeat
+
 ```
 
 ---
