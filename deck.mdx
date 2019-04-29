@@ -2,136 +2,61 @@ import { Appear, Head, Image  } from 'mdx-deck'
 import { FullScreenCode, Invert, Split } from 'mdx-deck/layouts'
 import { CodeSurfer } from "mdx-deck-code-surfer"
 import nightOwl from "prism-react-renderer/themes/nightOwl"
-export { light as theme } from 'mdx-deck/themes'
+export { comic as theme } from 'mdx-deck/themes'
 
 <Head>
-  <title>Unit testing presentation</title>
-  <meta itemProp="name" content="Unit testing presentation" />
-  <meta itemProp="description" content="Unit testing presentation" />
+  <title>Frontend NE presentation</title>
+  <meta itemProp="name" content="Frontend NE presentation" />
+  <meta itemProp="description" content="Frontend NE presentation" />
   <meta itemProp="image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@_AlanCurrie" />
-  <meta name="twitter:title" content="Unit testing presentation" />
-  <meta name="twitter:description" content="Unit testing presentation" />
+  <meta name="twitter:title" content="Frontend NE presentation" />
+  <meta name="twitter:description" content="Frontend NE presentation" />
   <meta name="twitter:image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
-  <meta property="og:title" content="Unit testing presentation" />
+  <meta property="og:title" content="Frontend NE presentation" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://reverent-rosalind-f11320.netlify.com/" />
   <meta property="og:image" content="https://api.adorable.io/avatars/285/abott@adorable.png" />
-  <meta property="og:description" content="Unit testing presentation" />
-  <meta property="og:site_name" content="Unit testing presentation" />
+  <meta property="og:description" content="Frontend NE presentation" />
+  <meta property="og:site_name" content="Frontend NE presentation" />
   <meta property="article:section" content="Progressive web app" />
 </Head>
 
-#  Unit Testing  🐛
+#  Frontend NE
+## April 3rd 2019
 
 
 ---
 
+## Jeremy Keith  - Going Offline
 
-# A test is something that throws an error if there is a problem ❌
+<Image src={require("!file-loader!./img/jeremy-keith.jpg")} size="450px" style={{ backgroundPosition: 'left' }} />
+
+
+export default Split
+
 
 ---
 
-<Image src={require("!file-loader!./img/trophywithLabels.png")} size="contain" />
+##  Katie Fenn - Chrome DevTools, Inside Out
 
----
+<Image src={require("!file-loader!./img/katie-fenn.jpg")} size="450px" style={{ backgroundPosition: 'left' }} />
 
-
-#  unit testing ✔️🔬
+export default Split
 
 
 ```notes
-Unit testing is a software development process in which
-the smallest testable parts of an application,
-called units, are individually and independently scrutinized
-for proper opera
 ```
 
 ---
 
-#  AAA (Arrange, Act, Assert) 📋
+##  Remy Sharp - Using a modern web to recreate 1980S horribly slow and loud loading screens
 
-```notes
+<Image src={require("!file-loader!./img/remy-sharp.jpg")} size="450px" style={{ backgroundPosition: 'left' }} />
 
-    The Arrange section of a unit test method initializes objects and sets the value of the data that is passed to the method under test.
+export default Split
 
-    The Act section invokes the method under test with the arranged parameters.
-
-    The Assert section verifies that the action of the method under test behaves as expected.
-
-```
-
-
----
-
-#  unit test demo 💫
-
----
-
-<Image src={require("!file-loader!./img/jest.png")} size="100 x 100" />
-
-
-```notes
-
- naming and structuring tests
-  jest assestions
-  Jest snapshot
-  jest watch
-  jest axe
-  jest lighthouse
-
-We can add the --watch flag to this to keep this running in the background as we create and edit new tesk
-
-Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
-
-A typical snapshot test case for a mobile app renders a UI component, takes a snapshot,
-then compares it to a reference snapshot file stored alongside the test. The test will fail
-if the two snapshots do not match: either the change is unexpected,
-or the reference snapshot needs to be updated to the new version of the UI component.
-
-```
-
----
-
-# Code Coverage 🌐
-
-
-```notes
-
-    instanbul under the hood
-
-    <https://istanbul.js.org/>
-
-    Function coverage Has each function (or subroutine) in the program been called?
-    Statement coverage Has each statement in the program been executed?
-    Branch coverage Has each branch  of each control structure (such as in if and case statements) been executed? For example, given an if statement, have both the true and false branches been executed? Another way of saying this is, has every edge in the program been executed?
-    Line coverage has each executable line in the source file been executed?
-
-    <https://stackoverflow.com/questions/90002/what-is-a-reasonable-code-coverage-for-unit-tests-and-why>
-    <https://www.google.com/search?client=firefox-b-d&biw=1266&bih=1343&tbm=isch&sa=1&ei=6htrXOOMBZqT1fAPq_-f6AU&q=code+coverage+meme&oq=code+coverage+meme&gs_l=img.3..0.66126.66580..66874...0.0..0.63.299.5......1....1..gws-wiz-img.......0i7i30.S-6375eK0hQ#imgrc=tRD2nlrLt8WvgM:>
-
-
-```
-
----
-
-<Image src={require("!file-loader!./img/killbill.gif")} size="contain" />
-
-
----
-
-How do we know all our tests are running? 🤔
-
-```notes
-
-<https://jestjs.io/docs/en/expect#expectassertionsnumber>
-
-```
-
----
-
-<Image src={require("!file-loader!./img/dr-evil.gif")} size="contain" />
 
 ```notes
 
@@ -140,58 +65,41 @@ How do we know all our tests are running? 🤔
 
 ---
 
-# TDD 🏎️
+##  Ruben van der Leun - Instant VR, Just Add Browser
+
+<Image src={require("!file-loader!./img/ruben-van-der-leun.jpg")} size="450px" style={{ backgroundPosition: 'left' }} />
+
+export default Split
+
 
 ```notes
-Start by writing a test
-Run the test and any other tests. At this point, your newly added test should fail. If it doesn’t fail here, it might not be testing the right thing and thus has a bug in it.
-Write the minimum amount of code required to make the test pass
-Run the tests to check the new test passes
-Optionally refactor your code
-Repeat
-
 ```
 
 ---
 
+## Ania Bebb - They Left, Now What?
 
-<Image src={require("!file-loader!./img/tdd.png")} size="contain" />
+<Image src={require("!file-loader!./img/ania-bebb.jpg")} size="450px" style={{ backgroundPosition: 'left' }} />>
+
+export default Split
 
 ```notes
-- Create speaker notes in fenced code blocks
 ```
 
 ---
 
+## Rachel Andrew - Grids All the Way Down
 
-# Bonus E2E with Cypress 🌟
+<Image src={require("!file-loader!./img/rachel-andrew.jpg")} size="450px" style={{ backgroundPosition: 'left' }} /> />
+
+export default Split
 
 ```notes
-- Create speaker notes in fenced code blocks
 ```
-
-
 ---
 
 # Thanks and links 🤗🔗
 
-<https://docs.microsoft.com/en-us/visualstudio/test/unit-test-basics?view=vs-2017>
-
-<https://jestjs.io/docs/en/api>
-
-<https://github.com/nickcolley/jest-axe>
-
-<https://github.com/redbadger/Puppeteer-lighthouse-jest>
-
-
----
-#  ... and more links  🔗
-
-<https://kentcdodds.com/links>
-
-<https://testingjavascript.com>
-
-<https://blog.kentcdodds.com/but-really-what-is-a-javascript-test-46fe5f3fad77>
-
+<https://2019.frontendne.co.uk>
 
 ---
