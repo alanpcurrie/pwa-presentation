@@ -1,52 +1,26 @@
-import { Appear, Head, Image } from "mdx-deck";
-import { FullScreenCode, Invert, Split } from "mdx-deck/layouts";
-import { CodeSurfer } from "mdx-deck-code-surfer";
-import nightOwl from "prism-react-renderer/themes/nightOwl";
-export { dark as theme } from "mdx-deck/themes";
+export { default as theme } from './src'
+import { Appear,Head, Image } from 'mdx-deck'
+import { Layout, LayoutNoFooter, CodeSanbox, Split, BGImage } from './src'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+import nightOwl from 'prism-react-renderer/themes/nightOwl'
 
 <Head>
-  <title>Progressive web app presentation</title>
-  <meta itemProp="name" content="Progressive web app presentation" />
-  <meta itemProp="description" content="Progressive web app presentation" />
-  <meta
-    itemProp="image"
-    content="https://api.adorable.io/avatars/285/abott@adorable.png"
-  />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@_AlanCurrie" />
-  <meta name="twitter:title" content="Progressive web app presentation" />
-  <meta name="twitter:description" content="Progressive web app presentation" />
-  <meta
-    name="twitter:image"
-    content="https://api.adorable.io/avatars/285/abott@adorable.png"
-  />
-  <meta property="og:title" content="Progressive web app presentation" />
-  <meta property="og:type" content="article" />
-  <meta
-    property="og:url"
-    content="https://reverent-rosalind-f11320.netlify.com/"
-  />
-  <meta
-    property="og:image"
-    content="https://api.adorable.io/avatars/285/abott@adorable.png"
-  />
-  <meta property="og:description" content="Progressive web app presentation" />
-  <meta property="og:site_name" content="Progressive web app presentation" />
-  <meta property="article:section" content="Progressive web app" />
+  <title>PWA for designers</title>
 </Head>
 
-# 🤖 PWA 🤖
+<BGImage src={require('file-loader!./images/space_scene.jpg')} />
 
-⭐⭐ Progressive Web Applications ⭐⭐
+# Progressive Web Applications
 
 ---
 
-# What is a PWA 🦕
+export default Layout
+
+# What is a PWA?
 
 ### Progressive Web Apps are user experiences that have the reach of the web, and are:
 
 <Appear>
-  <p />
   <p>
     Reliable - Load instantly and never show the downasaur, even in uncertain
     network conditions.
@@ -65,143 +39,204 @@ export { dark as theme } from "mdx-deck/themes";
   </p>
 </Appear>
 
+---
+
+export default Layout
+
+# pwa design
+
+<Appear>
+
+<p>
+  Design for touch: as a native application
+</p>
+<p>
+  It’s good practice to use standard device fonts to make the PWA appear native and familiar
+</p>
+<p>
+  Design for offline first
+</p>
+<p>
+  Homescreen icon
+</p>
+
+<https://hasura.io/blog/design-guide-to-offline-first-apps/>
+
+</Appear>
+
+---
+
+
+
+export default Layout
+
+# pwa vs native
+
+
+<Appear>
+
+ <p>No IOS, android, or hybrid app developers required</p>
+
+  <p>Any page or screen on your PWA can have its own shareable direct link </p>
+
+  <p>Content in PWAs can be easily found by search engines and are adjusted to Google’s mobile-first index </p>
+
+</Appear>
+
+---
+
+
+export default Layout
+
+# an open web
+
+  <p>pwa keeps the spirit of the open web alive  </p>
+
+---
+
+export default Layout
+
+# Development
+
+---
+
+export default Layout
+
+# App shell
+
+<Appear>
+<p>
+  The App shell concept is concerned with loading a minimal user interface as soon as possible and then caching it so it is available
+  The next time someone visits the app from the device.
+</p>
+
+<p>
+  The UI loads from the cache immediately and any new content is requested from the server
+  (if it isn’t available in the cache already).
+</p>
+
+<https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Structural_overview>
+
+</Appear>
+
 ```notes
-- Create speaker notes in fenced code blocks
+
 ```
 
-export default Split
-
 ---
 
-## App shell 🐚
+export default Layout
 
-The App shell concept is concerned with loading a minimal user interface as soon as possible and then caching it so it is available offline for subsequent visits before then loading all the contents of the app.
+# app manifest
 
----
+<Appear>
 
-### App shell contiued.....
+<p>
+  The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed'
+  on the user's mobile device or desktop.
+</p>
 
-The next time someone visits the app from the device.
+<p>
+  Having a manifest is required by Chrome to show the Add to Home Screen prompt.
+</p>
 
-The UI loads from the cache immediately and any new content is requested from the server (if it isn’t available in the cache already).
-
----
-
-### ...and a bit more about App shell
-
-This structure is fast, and also feels fast as the user sees "something" instantly,
-
-instead of a loading spinner or a blank page. It also allows the website to be accessible offline if the network connection is not available.
-
----
-
-### Getting assets into the App shell
-
-We can control what is requested from the server and what is retrieved from the cache with a service worker... more on that later.... 🎉
-
----
-
-## App manifest 📖
-
-The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
-
-Having a manifest is required by Chrome to show the Add to Home Screen prompt.
+<p>
+  The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+  Having a manifest is required by Chrome to show the Add to Home Screen prompt."
+</p>
 
 <https://developer.mozilla.org/en-US/docs/Web/Manifest>
 
+</Appear>
+
 ```notes
-- Create speaker notes in fenced code blocks
+
 ```
 
 ---
 
+export default Layout
+
 <CodeSurfer
-  title="⚙️ app manifest ⚙️"
-  notes="The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
-Having a manifest is required by Chrome to show the Add to Home Screen prompt.✏️"
+  title="APP MANIFEST"
   code={require("!raw-loader!./examples/manifest.js")}
   lang="javascript"
   showNumbers={true}
   theme={nightOwl}
   dark={false}
   steps={[
-    { range: [1, 3], notes: "Defines the PWA NAME ✏️" },
-    { range: [10, 14], notes: "Homescreen icon ✏️" },
-    { range: [29, 30], notes: "default colour ✏️" },
+    { range: [1, 3], notes: "Defines the PWA name" },
+    { range: [10, 14], notes: "Homescreen icon " },
+    { range: [29, 30], notes: "default colour" },
     {
       lines: [27],
       notes:
-        "Defines the developers’ preferred display mode for the website. ✏️"
+        "Defines the developers’ preferred display mode for the website."
     }
   ]}
 />
 
+
 ```notes
-- Create speaker notes in fenced code blocks
-```
+In this case we are creating a schema that has Speaker and Talk and a speaker can have multiple talks but a talk can only have one speaker and all their fields are typed
+````
 
 ---
 
-### Browser
+export default Split
 
-The application opens in a conventional browser tab or new window, depending on the browser and platform. _This is the default._
+<img src={require('file-loader!./images/browser.jpg')} />
 
----
 
-<Image src={require("!file-loader!./img/browser.jpg")} size="contain" />
-
----
-
-### Fullscreen
-
-All of the available display area is used and no user agent chrome is shown.
+- ### Browser
+- The application opens in a conventional browser tab or new window,
+- depending on the browser and platform.
+- _This is the default._
 
 ---
 
-<Image src={require("!file-loader!./img/fullscreen.jpg")} size="contain" />
+export default Split
+
+<img src={require('file-loader!./images/fullscreen.jpg')} />
+
+
+- ### Fullscreen
+- All of the available display area is used
+- _no user agent chrome is shown_
 
 ---
 
-### Standalone
+export default Split
 
-The application will look and feel like a standalone application.
+<img src={require('file-loader!./images/standalone.jpg')} />
 
-This can include the application having a different window, its own icon in the application launcher, etc.
 
-In this mode, the user agent will exclude UI elements for controlling navigation, but can include other UI elements such as a status bar.
+- ### Standalone
+- The application will look and feel like a standalone application.
 
----
-
-<Image src={require("!file-loader!./img/standalone.jpg")} size="contain" />
-
----
-
-### Minimal-ui
-
-The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation.
-The elements will vary by browser.
+- This can include the application having a different window,
+- its own icon in the application launcher, etc.
+- In this mode, the user agent will exclude UI elements for controlling navigation,
+- but can include other UI elements such as a status bar.
 
 ---
 
-### Sorry no pics 🤷
 
----
+export default Layout
 
-## Meta data for non android browsers
+#  Meta data for non android browsers
 
+
+```notes
 IOS and Microsoft Edge and still need some metadata to make the app installable.
-
-For iOS, it needs three `<meta>` tags. They all start with apple-mobile-web-app and have a content property.
-
-```notes
-- Create speaker notes in fenced code blocks
-```
+For iOS, it needs three `<meta>` tags.
+They all start with apple-mobile-web-app and have a content property.````
 
 ---
 
 <CodeSurfer
-  title="⚙️ PWA meta data ⚙️"
-  notes="Android does most of this by default ✏️"
+  title="META DATA"
+  notes="Android does most of this by default"
   code={require("!raw-loader!./examples/meta.html")}
   lang="html"
   showNumbers={true}
@@ -215,50 +250,38 @@ For iOS, it needs three `<meta>` tags. They all start with apple-mobile-web-app 
 
 ---
 
-### Title
 
-The appliction, most likely the same as the app manifest
-
----
-
-### Homescreen icon
+# Homescreen icon
 
 The icon that will be displayed in the iOS home screen. We will do this with a `<link>` tag.
-In the rel property, the apple-touch-icon, and add the path to the smaller icon here.
 
-We also have to add tags for edge... The first one is TileImage. Again, we'll write here the path to the smaller icon.
-The other property is TileColor, which is the tile color that Windows uses to place the tile icon in the home screen.
 
 ---
 
-### Capable
+# Capable
 
 This meta tag tells iOS that this web app is installable.
 
 ---
 
-### Status bar
+# Status bar
 
 Configure the status-bar-style, which it can be default, which is just the user's status bar.
 
 IOS - default, black, black-translucent
 
+
 ---
 
-## Service workers
+# Service workers
 
 A service worker is a script that runs in the background without access to the UI, and a requisite for a Progressive Web App.
 They can be used for caching requests and assets.
 
-```notes
-- Create speaker notes in fenced code blocks
-```
-
-export default Split
 
 ---
 
-### More service workers
+# More service workers
 
 - Service Workers are a virtual proxy between the browser and the network.
 - They run on a separate thread from the main JavaScript code of the page, and don't have any access to the DOM structure.
@@ -267,10 +290,9 @@ export default Split
 
 ---
 
-### Service workers life cycle 🧟
+# Service workers life cycle
 
 <Appear>
-  <p />
   <p>Parsed</p>
   <p>Installed</p>
   <p>Activating</p>
@@ -282,30 +304,12 @@ export default Split
 - Create speaker notes in fenced code blocks
 ```
 
-export default Split
 
----
-
-### Parsed
-
-When we first attempt to register a Service Worker, the user agent parses the script and obtains the entry point.
-
-If parsing is successful (and some other requirements, e.g. HTTPS, are met),
-
-we will have access to the Service Worker registration object.
-
----
-
-### Installing
-
-The first event a service worker gets is install. It's triggered as soon as the worker executes,
-
-it's only called once per service worker.
 
 ---
 
 <CodeSurfer
-  title="⚙️ Service worker example⚙️"
+  title="Service worker example"
   code={require("!raw-loader!./examples/serviceworker.js")}
   lang="javascript"
   showNumbers={true}
@@ -327,7 +331,7 @@ it's only called once per service worker.
 
 ---
 
-### Installed
+# Installed
 
 Once the Service Worker script has been parsed,
 
@@ -335,7 +339,7 @@ the user agent attempts to install it and it moves to the installing state.
 
 ---
 
-### Activating
+# Activating
 
 The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
 
@@ -349,7 +353,7 @@ If a specified period of time has passed, thereby releasing the previous active 
 
 ---
 
-### Activated
+# Activated
 
 If activation is successful, the Service Worker moves to the active state.
 
@@ -357,7 +361,7 @@ In this state, it is an active worker in full control of the document.
 
 ---
 
-### Redundant
+# Redundant
 
 A Service Worker can become redundant for one of the following reasons -
 
@@ -369,7 +373,7 @@ If a new Service Worker replaces it as the active service worker
 
 ---
 
-### Service workers scope 🎯
+# Service workers scope
 
 - The service worker will only catch requests from clients under the service worker's scope.
 - The max scope for a service worker is the location of the worker.
@@ -381,15 +385,16 @@ If a new Service Worker replaces it as the active service worker
 - Create speaker notes in fenced code blocks
 ```
 
-export default Split
+
 
 ---
 
-<Image src={require("!file-loader!./img/scope.png")} size="contain" />
+
+<Image src={require("!file-loader!./images/scope.png")} size="contain" />
 
 ---
 
-## Network Strategy
+# Network Strategy
 
 With network strategies, you can tune which types of requests should
 get the freshest content possible and which should try to get responses
@@ -400,12 +405,10 @@ unnecessary network round trips for static assets.
 - Create speaker notes in fenced code blocks
 ```
 
-export default Split
-
 ---
 
 <CodeSurfer
-  title="⚙️ SW Network strategy  - fetch from cache ⚙️"
+  title="fetch from cache"
   code={require("!raw-loader!./examples/serviceworker.2.js")}
   lang="javascript"
   showNumbers={true}
@@ -415,15 +418,7 @@ export default Split
 
 ---
 
-## Precache 💸
-
-<https://github.com/GoogleChromeLabs/sw-precache>
-
-<https://www.npmjs.com/package/sw-precache>
-
----
-
-## Precache continued...
+# Precache
 
 Service Worker Precache is a module for generating a service worker that precaches resources.
 
@@ -433,10 +428,16 @@ It integrates with your build process. Once configured, it detects all your stat
 Information about each file's URL and versioned hash are stored in the generated service worker file,
 along with logic to serve those files cache-first and automatically keep those files up to date when changes are detected in subsequent builds.
 
+
+<https://github.com/GoogleChromeLabs/sw-precache>
+
+<https://www.npmjs.com/package/sw-precache>
+
 ---
 
+
 <CodeSurfer
-  title=" Service Worker Precache 💸 "
+  title=" Service Worker Precache "
   notes="Service Worker Precache is a module for generating a service worker that precaches resources. ✏️"
   code={require("!raw-loader!./examples/webpack-precache.js")}
   lang="javascript"
@@ -458,26 +459,13 @@ along with logic to serve those files cache-first and automatically keep those f
 
 ---
 
-## ✨Bonus Nugget ! ✨ Fat Arrow Functions 🔥➡️
-
-Not all browsers support arrow functions `(() => {})` but every
-browser that supports Service Worker does, the same goes for CONST and LET, no babel required.
-
-<https://caniuse.com/#search=service%20worker>
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
-## Navigator API - Check online status ⛵️
+# Navigator API - Check online status
 
 Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline.
 
 ---
 
-### More Navigator
+# More Navigator
 
 The property sends updates whenever the browser's ability to connect to the network changes. The update occurs when the user follows links or when a script requests a remote page.
 
@@ -485,7 +473,7 @@ For example, the property should return false when users click links soon after 
 
 ---
 
-### Using the Navigator
+# Using the Navigator
 
 **USE CASE** - navigator offline API for disabling button state for form post
 
@@ -497,7 +485,7 @@ For example, the property should return false when users click links soon after 
 
 ---
 
-## Push Notifications 🐏
+# Push Notifications
 
 native application like push notifications
 
@@ -514,7 +502,7 @@ or they can be "pushed" from the server to the user even when the app is not run
 
 ---
 
-## Performance 🏃💨
+# Performance 🏃💨
 
 <https://hnpwa.com/>
 
@@ -522,11 +510,11 @@ or they can be "pushed" from the server to the user even when the app is not run
 - Create speaker notes in fenced code blocks
 ```
 
-export default Split
+
 
 ---
 
-## Lighthouse audits 🔆
+# Lighthouse audits
 
 Lighthouse is an open-source, automated tool for improving the quality of web pages.
 
@@ -535,21 +523,11 @@ It has audits for performance, accessibility, progressive web apps, and more.
 
 ---
 
-<Image src={require("!file-loader!./img/lighthouse.jpg")} size="contain" />
+<Image src={require("!file-loader!./images/lighthouse.jpg")} size="contain" />
 
 ---
 
-## here's a PWA I made earlier
-
-<https://pwa-chat-2a5f9.firebaseapp.com>
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
-## Development Env.
+# Development Env.
 
 Mobile testing - Ngrok is a service that relays your local environment on an external dns,
 
@@ -559,11 +537,11 @@ run
 
 `ngrok http 8080`
 
-browse to the external URL. win.
+browse to the external URL
 
 ---
 
-### Test Production
+# Test Production
 
 service workers are a production feature so....
 
@@ -573,80 +551,31 @@ build project `npm run build`
 
 serve production files `serve dist`
 
-more win.
 
 ---
 
-<Image src={require("!file-loader!./img/win.gif")} size="contain" />
+<Image src={require("!file-loader!./images/win.gif")} size="contain" />
 
 ---
 
-### Intersection Observer API 👀
-
-The Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element
-
-with an ancestor element or with a top-level document's viewport.
-
-**USE CASE** lazy loading images
-
-<https://caniuse.com/#feat=intersectionobserver>
+<Image src={require("!file-loader!./images/pwa-stats.png")} size="contain" />
 
 ---
 
-<CodeSurfer
-  title=" ✨Bonus Nugget !✨ -  Code splitting 🤸 "
-  notes="Chunking that monolithic Js bundle ✏️"
-  code={require("!raw-loader!./examples/import.js")}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  dark={false}
-  steps={[
-    {
-      lines: [3],
-      notes:
-        " Webpack's dynamic import function splits each into a separate build file. Then, when the user visits a different page, Webpack will asynchronously load the requested page's file. ✏️"
-    }
-  ]}
-/>
 
-```notes
-- Create speaker notes in fenced code blocks
-```
+export default Split
+
+<img src={require('file-loader!./images/businesstime.gif')} />
+
+
+- <https://www.pwastats.com>
+-
+- <https://smashingideas.com/pwa-statistics>
+
 
 ---
 
-Stuff I didn't look into...
-
-indexDb
-
-<https://caniuse.com/#feat=indexeddb>
-
-<https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API>
-
----
-
-## PWA busines case - stats and stuff 📈
-
----
-
-<Image src={require("!file-loader!./img/business.gif")} size="contain" />
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
-<Image src={require("!file-loader!./img/pwa-stats.png")} size="contain" />
-
----
-
-<Image src={require("!file-loader!./img/businesstime.gif")} size="contain" />
-
----
-
-## useful links
+# useful links
 
 <https://caniuse.com/#feat=serviceworkers>
 
@@ -666,7 +595,7 @@ indexDb
 
 ---
 
-## ...more useful links
+# ...more useful links
 
 <https://developers.google.com/web/tools/lighthouse>
 
@@ -684,11 +613,11 @@ indexDb
 
 ---
 
-# slides built with mdx-deck ⚛️
+# slides built with mdx-deck ⚛
 
-# & codesurfer 🏄
+# & codesurfer
 
-## hosted on netlify 👻
+## hosted on netlify
 
 <https://github.com/jxnblk/mdx-deck>
 
@@ -704,6 +633,18 @@ indexDb
 
 ---
 
-# Thanks and questions 😘❓
+# gifs and cats
+
+<https://pwa-chat-2a5f9.firebaseapp.com>
+
+```notes
+- Create speaker notes in fenced code blocks
+```
 
 ---
+
+export default LayoutNoFooter
+
+<BGImage src={require('file-loader!./images/moon.jpg')} />
+
+# Thank You

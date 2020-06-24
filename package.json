@@ -1,23 +1,27 @@
 {
-  "private": true,
+  "name": "99-problems-graphql-aint-one",
   "version": "1.0.0",
-  "description": "Deck created with mdx-deck",
+  "description": "LvivJS Talk",
+  "main": "index.js",
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build --no-html deck.mdx",
-    "pdf": "mdx-deck pdf deck.mdx",
-    "image": "mdx-deck screenshot deck.mdx",
-    "help": "mdx-deck"
+    "build": "mdx-deck build deck.mdx --no-html"
   },
-  "keywords": [],
-  "author": "Brent Jackson",
+  "author": "Sara Vieira",
+  "now": {
+    "alias": "99-problems-graphql-aint-one"
+  },
   "license": "MIT",
   "devDependencies": {
-    "mdx-deck": "^1.6.7"
+    "file-loader": "^2.0.0",
+    "mdx-deck": "^1.7.0",
+    "mdx-deck-code-surfer": "^0.5.5",
+    "raw-loader": "^1.0.0"
   },
   "dependencies": {
-    "file-loader": "^2.0.0",
-    "mdx-deck-code-surfer": "^0.4.1",
-    "raw-loader": "^0.5.1"
+    "npm": "^6.4.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "styled-components": "^3.4.5"
   }
 }
