@@ -94,7 +94,13 @@ export default Layout
 
 # an open web
 
-  <p>pwa keeps the spirit of the open web alive  </p>
+  <p>
+  pwa keeps the spirit of the open web alive
+  </p>
+
+  <p>
+    No walled garden, Apple appstore validation rules,
+  </p>
 
 ---
 
@@ -159,7 +165,7 @@ export default Layout
 
 ---
 
-export default Layout
+export default LayoutNoFooter
 
 <CodeSurfer
   title="APP MANIFEST"
@@ -179,11 +185,6 @@ export default Layout
     }
   ]}
 />
-
-
-```notes
-In this case we are creating a schema that has Speaker and Talk and a speaker can have multiple talks but a talk can only have one speaker and all their fields are typed
-````
 
 ---
 
@@ -238,6 +239,8 @@ They all start with apple-mobile-web-app and have a content property.````
 
 ---
 
+export default LayoutNoFooter
+
 <CodeSurfer
   title="META DATA"
   notes="Android does most of this by default"
@@ -254,6 +257,8 @@ They all start with apple-mobile-web-app and have a content property.````
 
 ---
 
+export default Layout
+
 
 # Homescreen icon
 
@@ -262,11 +267,15 @@ The icon that will be displayed in the iOS home screen. We will do this with a `
 
 ---
 
+export default Layout
+
 # Capable
 
 This meta tag tells iOS that this web app is installable.
 
 ---
+
+export default Layout
 
 # Status bar
 
@@ -277,6 +286,8 @@ IOS - default, black, black-translucent
 
 ---
 
+export default Layout
+
 # Service workers
 
 A service worker is a script that runs in the background without access to the UI, and a requisite for a Progressive Web App.
@@ -284,6 +295,8 @@ They can be used for caching requests and assets.
 
 
 ---
+
+export default Layout
 
 # More service workers
 
@@ -293,6 +306,8 @@ They can be used for caching requests and assets.
 - You are able to give a Service Worker something to work on, and receive the result whenever it is ready using a Promise-based approach.
 
 ---
+
+export default Layout
 
 # Service workers life cycle
 
@@ -311,6 +326,7 @@ They can be used for caching requests and assets.
 
 
 ---
+export default LayoutNoFooter
 
 <CodeSurfer
   title="Service worker example"
@@ -323,17 +339,19 @@ They can be used for caching requests and assets.
     {
       lines: [1],
       notes:
-        "Registering a service worker, Browsers that support Service Worker expose service worker on the global navigator object. ✏️"
+        "Registering a service worker, Browsers that support Service Worker expose service worker on the global navigator object."
     },
     {
       range: [3, 11],
       notes:
-        "Check if the browser supports service workers, if the navigator object has a serviceWorker property ✏️"
+        "Check if the browser supports service workers, if the navigator object has a serviceWorker property"
     }
   ]}
 />
 
 ---
+
+export default Layout
 
 # Installed
 
@@ -342,6 +360,8 @@ Once the Service Worker script has been parsed,
 the user agent attempts to install it and it moves to the installing state.
 
 ---
+
+export default Layout
 
 # Activating
 
@@ -357,6 +377,8 @@ If a specified period of time has passed, thereby releasing the previous active 
 
 ---
 
+export default Layout
+
 # Activated
 
 If activation is successful, the Service Worker moves to the active state.
@@ -364,6 +386,8 @@ If activation is successful, the Service Worker moves to the active state.
 In this state, it is an active worker in full control of the document.
 
 ---
+
+export default Layout
 
 # Redundant
 
@@ -376,6 +400,8 @@ If the activating event failed
 If a new Service Worker replaces it as the active service worker
 
 ---
+
+export default Layout
 
 # Service workers scope
 
@@ -398,6 +424,8 @@ If a new Service Worker replaces it as the active service worker
 
 ---
 
+export default Layout
+
 # Network Strategy
 
 With network strategies, you can tune which types of requests should
@@ -411,6 +439,8 @@ unnecessary network round trips for static assets.
 
 ---
 
+export default LayoutNoFooter
+
 <CodeSurfer
   title="fetch from cache"
   code={require("!raw-loader!./examples/serviceworker.2.js")}
@@ -421,6 +451,8 @@ unnecessary network round trips for static assets.
 />
 
 ---
+
+export default Layout
 
 # Precache
 
@@ -438,7 +470,7 @@ along with logic to serve those files cache-first and automatically keep those f
 <https://www.npmjs.com/package/sw-precache>
 
 ---
-
+export default LayoutNoFooter
 
 <CodeSurfer
   title=" Service Worker Precache "
@@ -463,11 +495,15 @@ along with logic to serve those files cache-first and automatically keep those f
 
 ---
 
+export default Layout
+
 # Navigator API - Check online status
 
 Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline.
 
 ---
+
+export default Layout
 
 # More Navigator
 
@@ -476,6 +512,8 @@ The property sends updates whenever the browser's ability to connect to the netw
 For example, the property should return false when users click links soon after they lose internet connection.
 
 ---
+
+export default Layout
 
 # Using the Navigator
 
@@ -488,6 +526,8 @@ For example, the property should return false when users click links soon after 
 ```
 
 ---
+
+export default Layout
 
 # Push Notifications
 
@@ -506,6 +546,8 @@ or they can be "pushed" from the server to the user even when the app is not run
 
 ---
 
+export default Layout
+
 # Performance 🏃💨
 
 <https://hnpwa.com/>
@@ -517,6 +559,8 @@ or they can be "pushed" from the server to the user even when the app is not run
 
 
 ---
+
+export default Layout
 
 # Lighthouse audits
 
@@ -531,6 +575,8 @@ It has audits for performance, accessibility, progressive web apps, and more.
 
 ---
 
+export default Layout
+
 # Development Env.
 
 Mobile testing - Ngrok is a service that relays your local environment on an external dns,
@@ -544,6 +590,8 @@ run
 browse to the external URL
 
 ---
+
+export default Layout
 
 # Test Production
 
@@ -579,6 +627,8 @@ export default Split
 
 ---
 
+export default Layout
+
 # useful links
 
 <https://caniuse.com/#feat=serviceworkers>
@@ -599,6 +649,8 @@ export default Split
 
 ---
 
+export default Layout
+
 # ...more useful links
 
 <https://developers.google.com/web/tools/lighthouse>
@@ -617,6 +669,8 @@ export default Split
 
 ---
 
+export default Layout
+
 # slides built with mdx-deck ⚛
 
 # & codesurfer
@@ -631,11 +685,26 @@ export default Split
 
 <https://www.netlify.com>
 
+
+
 ```notes
 - Create speaker notes in fenced code blocks
 ```
 
 ---
+
+export default Layout
+
+ # image credit
+
+ <https://www.jpl.nasa.gov/visions-of-the-future>
+
+ <https://www.flickr.com/photos/projectapolloarchive>
+
+
+---
+
+export default Layout
 
 # gifs and cats
 
