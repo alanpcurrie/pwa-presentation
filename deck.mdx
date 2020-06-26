@@ -60,8 +60,6 @@ export default Layout
   Homescreen icon
 </p>
 
-<https://hasura.io/blog/design-guide-to-offline-first-apps/>
-
 </Appear>
 
 ---
@@ -94,13 +92,19 @@ export default Layout
 
 # an open web
 
+<Appear>
+
   <p>
-  pwa keeps the spirit of the open web alive
+  PWA's keeps the spirit of the open web alive
   </p>
 
   <p>
-    No walled garden, Apple App Store validation rules,
+    No walled garden - Apple App Store review guidlines
   </p>
+   <p>
+    Freedom to innovate
+  </p>
+</Appear>
 
 ---
 
@@ -142,17 +146,12 @@ export default Layout
 <Appear>
 
 <p>
-  The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed'
-  on the user's mobile device or desktop.
-</p>
-
-<p>
   Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 </p>
 
 <p>
-  The web app manifest is a JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
-  Having a manifest is required by Chrome to show the Add to Home Screen prompt."
+  The web app manifest is a JSON file that tells the browser about your web application
+  and how it should behave when 'installed' on the user's device
 </p>
 
 <https://developer.mozilla.org/en-US/docs/Web/Manifest>
@@ -217,12 +216,8 @@ export default Split
 
 
 - ### Standalone
-- The application will look and feel like a standalone application.
-
-- This can include the application having a different window,
-- its own icon in the application launcher, etc.
-- In this mode, the user agent will exclude UI elements for controlling navigation,
-- but can include other UI elements such as a status bar.
+-  will look and feel like a standalone application.
+- _can include other UI elements such as a status bar._
 
 ---
 
@@ -259,73 +254,21 @@ export default LayoutNoFooter
 
 export default Layout
 
-
-# Homescreen icon
-
-The icon that will be displayed in the iOS home screen. We will do this with a `<link>` tag.
-
-
----
-
-export default Layout
-
-# Capable
-
-This meta tag tells iOS that this web app is installable.
-
----
-
-export default Layout
-
-# Status bar
-
-Configure the status-bar-style, which it can be default, which is just the user's status bar.
-
-IOS - default, black, black-translucent
-
-
----
-
-export default Layout
-
 # Service workers
-
+<Appear>
+<p>
 A service worker is a script that runs in the background without access to the UI, and a requisite for a Progressive Web App.
 They can be used for caching requests and assets.
+</p>
+<p>
+  Service Workers are a virtual proxy between the browser and the network.
+</p>
 
-
----
-
-export default Layout
-
-# More service workers
-
-- Service Workers are a virtual proxy between the browser and the network.
-- They run on a separate thread from the main JavaScript code of the page, and don't have any access to the DOM structure.
-- Non blocking API
-- You are able to give a Service Worker something to work on, and receive the result whenever it is ready using a Promise-based approach.
-
----
-
-export default Layout
-
-# Service workers life cycle
-
-<Appear>
-  <p>Parsed</p>
-  <p>Installed</p>
-  <p>Activating</p>
-  <p>Activated</p>
-  <p>Redundant</p>
+<https://serviceworke.rs>
 </Appear>
 
-```notes
-- Create speaker notes in fenced code blocks
-```
-
-
-
 ---
+
 export default LayoutNoFooter
 
 <CodeSurfer
@@ -353,79 +296,6 @@ export default LayoutNoFooter
 
 export default Layout
 
-# Installed
-
-Once the Service Worker script has been parsed,
-
-the user agent attempts to install it and it moves to the installing state.
-
----
-
-export default Layout
-
-# Activating
-
-The activating state will be triggered for a waiting Service Worker in one of the following scenarios -
-
-If there is no current active worker already
-
-If the `self.skipWaiting()` method is called in the Service Worker script
-
-If the user has navigated away from the page, thereby releasing the previous active worker
-
-If a specified period of time has passed, thereby releasing the previous active worker
-
----
-
-export default Layout
-
-# Activated
-
-If activation is successful, the Service Worker moves to the active state.
-
-In this state, it is an active worker in full control of the document.
-
----
-
-export default Layout
-
-# Redundant
-
-A Service Worker can become redundant for one of the following reasons -
-
-If the installing event failed
-
-If the activating event failed
-
-If a new Service Worker replaces it as the active service worker
-
----
-
-export default Layout
-
-# Service workers scope
-
-- The service worker will only catch requests from clients under the service worker's scope.
-- The max scope for a service worker is the location of the worker.
-- If your server worker is active on a client being served with the Service-Worker-Allowed header,
-  you can specify a list of max scopes for that worker.
-- In Firefox, Service Worker APIs are hidden and cannot be used when the user is in private browsing mode.
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
-
-
----
-
-
-<Image src={require("!file-loader!./images/scope.png")} size="contain" />
-
----
-
-export default Layout
-
 # Network Strategy
 
 With network strategies, you can tune which types of requests should
@@ -439,30 +309,11 @@ unnecessary network round trips for static assets.
 
 ---
 
-export default LayoutNoFooter
-
-<CodeSurfer
-  title="fetch from cache"
-  code={require("!raw-loader!./examples/serviceworker.2.js")}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  dark={false}
-/>
-
----
-
 export default Layout
 
 # Precache
 
 Service Worker Precache is a module for generating a service worker that precaches resources.
-
-It integrates with your build process. Once configured, it detects all your static resources
-(HTML, JavaScript, CSS, images, etc.) and generates a hash of each file's contents.
-
-Information about each file's URL and versioned hash are stored in the generated service worker file,
-along with logic to serve those files cache-first and automatically keep those files up to date when changes are detected in subsequent builds.
 
 
 <https://github.com/GoogleChromeLabs/sw-precache>
@@ -499,33 +350,13 @@ export default Layout
 
 # Navigator API - Check online status
 
-Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline.
-
----
-
-export default Layout
-
-# More Navigator
-
-The property sends updates whenever the browser's ability to connect to the network changes. The update occurs when the user follows links or when a script requests a remote page.
-
-For example, the property should return false when users click links soon after they lose internet connection.
-
----
-
-export default Layout
-
-# Using the Navigator
-
-**USE CASE** - navigator offline API for disabling button state for form post
+Returns the online status of the browser.
+The property returns a boolean value, with true meaning online and false meaning offline.
 
 <https://caniuse.com/#feat=online-status>
 
-```notes
-- Create speaker notes in fenced code blocks
-```
-
 ---
+
 
 export default Layout
 
@@ -533,10 +364,7 @@ export default Layout
 
 native application like push notifications
 
-A notification is a message that pops up on the user's device. Notifications can be triggered locally by an open application,
-or they can be "pushed" from the server to the user even when the app is not running.
-
-**USE CASE** - fresh content alert, offline warning alert
+<https://caniuse.com/#feat=push-api>
 
 <https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications>
 
@@ -555,8 +383,6 @@ export default Layout
 ```notes
 - Create speaker notes in fenced code blocks
 ```
-
-
 
 ---
 
@@ -579,7 +405,7 @@ export default Layout
 
 # Development Env.
 
-Mobile testing - Ngrok is a service that relays your local environment on an external dns,
+Mobile testing - Ngrok is a service that relays your local environment on an external dns
 
 `npm install -g ngrok`
 
@@ -602,11 +428,6 @@ emulate an HTTP server `sudo npm install -g serve`
 build project `npm run build`
 
 serve production files `serve dist`
-
-
----
-
-<Image src={require("!file-loader!./images/win.gif")} size="contain" />
 
 ---
 
