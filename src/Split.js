@@ -49,8 +49,8 @@ const Split = ({ children }) => {
         ))}
       </Flex>
       <Footer>
-      <span>sopra steria: uk design team</span>
-      <span>progressive web apps for designers</span>
+        <span>Sopra Steria: UK Design Team</span>
+        <span>Progressive Web Applications For Designers</span>
       </Footer>
     </Root>
   )
