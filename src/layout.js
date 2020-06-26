@@ -22,6 +22,8 @@ const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
   background-image: url(${require('file-loader!../images/bg.png')});
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const Layout = ({ children }) => (

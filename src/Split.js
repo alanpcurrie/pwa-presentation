@@ -11,6 +11,8 @@ const Footer = styled.footer`
   width: 100vw;
   border-top: 1px solid #dc5f53;
   background-image: url(${require('file-loader!../images/bg.png')});
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   position: absolute;
