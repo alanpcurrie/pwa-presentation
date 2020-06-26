@@ -325,7 +325,7 @@ export default LayoutNoFooter
 
 <CodeSurfer
   title=" Service Worker Precache "
-  notes="Service Worker Precache is a module for generating a service worker that precaches resources. ✏️"
+  notes="Service Worker Precache is a module for generating a service worker that precaches resources"
   code={require("!raw-loader!./examples/webpack-precache.js")}
   lang="javascript"
   showNumbers={true}
@@ -335,7 +335,7 @@ export default LayoutNoFooter
     {
       range: [22, 29],
       notes:
-        " URL Patterns for caching images from the cat API - images can be viewed offline ✏️"
+        " URL Patterns for caching images from the cat API - images can be viewed offline"
     }
   ]}
 />
@@ -348,7 +348,7 @@ export default LayoutNoFooter
 
 export default Layout
 
-# Navigator API - Check online status
+# Navigator API
 
 Returns the online status of the browser.
 The property returns a boolean value, with true meaning online and false meaning offline.
@@ -390,10 +390,15 @@ export default Layout
 
 # Lighthouse audits
 
-Lighthouse is an open-source, automated tool for improving the quality of web pages.
-
-You can run it against any web page, public or requiring authentication.
-It has audits for performance, accessibility, progressive web apps, and more.
+<Appear>
+<p>
+  Lighthouse is an open-source, automated tool for improving the quality of web pages
+</p>
+<p>
+  You can run it against any web page, public or requiring authentication.
+  It has audits for performance, accessibility, progressive web apps, and more.
+</p>
+</Appear>
 
 ---
 
@@ -405,15 +410,20 @@ export default Layout
 
 # Development Env.
 
-Mobile testing - Ngrok is a service that relays your local environment on an external dns
-
-`npm install -g ngrok`
-
-run
-
-`ngrok http 8080`
-
-browse to the external URL
+<Appear>
+<p>
+  Mobile testing - Ngrok is a service that relays your local environment on an external dns
+</p>
+<p>
+  `npm install -g ngrok`
+</p>
+<p>
+  run `ngrok http 8080`
+</p>
+<p>
+  Browse to the external URL
+</p>
+</Appear>
 
 ---
 
@@ -421,29 +431,37 @@ export default Layout
 
 # Test Production
 
-service workers are a production feature so....
+<Appear>
 
-emulate an HTTP server `sudo npm install -g serve`
+<p>
+  Service workers are a production feature so...
+</p>
+<p>
+ Emulate an HTTP server `npm install -g serve`
+</p>
+<p>
+Build project `npm run build`
+</p>
+<p>
+Serve production files `serve dist`
+</p>
+</Appear>
 
-build project `npm run build`
+---
 
-serve production files `serve dist`
+export default Split
+
+
+<img src={require('file-loader!./images/businesstime.gif')} />
+
+- ## BUSINESS CASES
+- <https://www.pwastats.com>
+-
+- <https://smashingideas.com/pwa-statistics>
 
 ---
 
 <Image src={require("!file-loader!./images/pwa-stats.png")} size="contain" />
-
----
-
-
-export default Split
-
-<img src={require('file-loader!./images/businesstime.gif')} />
-
-
-- <https://www.pwastats.com>
--
-- <https://smashingideas.com/pwa-statistics>
 
 ---
 
@@ -506,11 +524,11 @@ export default Layout
 
 export default Layout
 
-# slides built with mdx-deck ⚛
+# slides built with MDX-deck ⚛
 
 # & codesurfer
 
-## hosted on netlify
+## Hosted on Netlify
 
 <https://github.com/jxnblk/mdx-deck>
 
